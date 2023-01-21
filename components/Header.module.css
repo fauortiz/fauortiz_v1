@@ -1,0 +1,42 @@
+
+
+
+.button {
+    /* outline: 1px yellow solid; */
+    width: 100%;
+    height: 60px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+.bullet {
+    width: 8px;
+    height: 12px;
+    height: 85%;
+    border-radius: 0 5px 5px 0;
+    transition: all 0.25s ease-in-out;
+}
+.resume .bullet {
+    background-color: var(--cyan);
+}
+.resume {
+    color: var(--pink);
+    background-color: var(--black);
+}
+.home .bullet {background-color: var(--green)}
+.projects .bullet {background-color: var(--hotpink)}
+.experience .bullet {background-color: var(--violet)}
+.contact .bullet {background-color: var(--cyan)}
+
+.button:hover .bullet {
+    /* width: 15px; */
+    width: 100%;
+    height: 100%;
+}
+.button:last-child {
+    margin-bottom: 20px;
+}
