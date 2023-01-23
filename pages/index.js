@@ -17,17 +17,11 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300;400;500;600;700&family=Mulish:wght@200;300;400;500;600;700;800;900&family=Yatra+One&display=swap" rel="stylesheet" />
             </Head>
-
-            <div className='frame'>
-                <div className='edge top-edge'></div>
-                <div className='edge left-edge'></div>
-                <div className='hero-border'></div>
-                <div className='main-border'></div>
-                <div className='edge right-edge'></div>
-                <div className='edge bottom-edge'></div>
-            </div>
+            <div id='stars1' className="stars"></div>
+            <div id='stars2' className="stars"></div>
+            <div id='stars3' className="stars"></div>
             
             <Header isDesktop={ width >= 1024 } />
             

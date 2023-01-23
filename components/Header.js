@@ -49,30 +49,32 @@ export default function Header({ isDesktop }) {
     console.log('Navbar')
     return (
         <header>
-            <button className={`nav-toggler bg-gray ${showToggler ? 'show' : 'hide'}`} onClick={
-                () => setShowNav(prev => !prev)
-            }>x</button>
-            <nav className={`bg-gray ${showNav ? 'show' : 'hide'}`}>
-                <a href="#" className={`${styles.button} ${styles.resume}`}>
-                    <div className={styles.bullet}></div>
-                    <div className={styles.link}>Resume</div>
-                </a>
+            <button className={`${styles.toggler} ${showToggler ? '' : styles.hide} ${showNav ? styles.navShow : ''}`} onClick={() => setShowNav(prev => !prev)}>
+                <div className={styles.transparent}></div>
+                <div className={styles.opaque}></div>
+                <div className={styles.icon}><div>{`${showNav ? 'x' : '='}`}</div></div>
+            </button>
+
+            <nav className={`${styles.nav} ${showNav ? styles.show : styles.hide}`}>
+
+                <button className={styles.closer} onClick={() => setShowNav(prev => !prev)}>
+                    <div>F</div>    
+                    </button>
                 <a href="#Home" className={`${styles.button} ${styles.home}`}>
-                    <div className={styles.bullet}></div>
                     <div className={styles.link}>Home</div>
-                </a>
+                    </a>
                 <a href="#Projects" className={`${styles.button} ${styles.projects}`}>
-                    <div className={styles.bullet}></div>
                     <div className={styles.link}>Projects</div>
-                </a>
+                    </a>
                 <a href="#Experience" className={`${styles.button} ${styles.experience}`}>
-                    <div className={styles.bullet}></div>
                     <div className={styles.link}>Experience</div>
-                </a>
+                    </a>
                 <a href="#Contact" className={`${styles.button} ${styles.contact}`}>
-                    <div className={styles.bullet}></div>
                     <div className={styles.link}>Contact</div>
-                </a>
+                    </a>
+                <a href="#Contact" className={`${styles.button} ${styles.resume}`}>
+                    <div className={styles.link}>View my Resume</div>
+                    </a>
             </nav>
         </header>
     )
