@@ -1,5 +1,6 @@
 
 
+
 .toggler {
     
     /* counteracting <button> defaults */
@@ -11,29 +12,35 @@
     position: absolute;
     top: 0;
     left: 0;
-    
-    height: 100vh;
-    width: 70px;
+
+    height: 70px;
+    width: 100vw;
     
     z-index: 902;
     
     transition: all .25s ease-in-out;
-    
-    /* outline: yellow 1px solid; */
-    /* perspective: 200px; */
+}
+.toggler.hide {
+    top: -70px;
+}
+.toggler.hide.navShow {
+    top: 0;
 }
 .toggler .transparent {
     background-color: transparent;
     height: 70px;
     transition: all .25s ease-in-out;
+
+    display: none;
 }
 .toggler .opaque {
     background-color: var(--lightgray);
-    height: calc(100vh - 70px);
+    height: 70px;
     transition: all .25s ease-in-out;
 }
 .toggler.navShow {
     height: 70px;
+    width: 70px;
 }
 .toggler.navShow .transparent {
     height: 0px;
@@ -41,26 +48,37 @@
 .toggler.navShow .opaque {
     height: 100%;
 }
-.icon {
+.burger {
     height: 70px;
     width: 70px;
+
+    right: 0;
 
     position: absolute;
     top: calc(50% - 35px);
 
     font-size: 30px;
-    color: white;
+    color: var(--text);
 
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-
-.toggler.hide {
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    
+    display: flex;
+    justify-content: flex-start;
+    background-color: var(--lightgray);
+    transition: all .25s ease-in-out;
 }
-
-
+.toggler.navShow .logo {
+    left: -500px;
+}
 .closer {
     /* counteracting <button> defaults */
     border: none;
@@ -76,7 +94,7 @@
     justify-content: flex-end;
     background-color: var(--lightgray);
 }
-.closer div {
+.closer div, .logo div {
     height: 70px;
     width: 70px;
     
@@ -86,14 +104,15 @@
     
     font-family: 'Yatra One', cursive;
     font-size: 32px;
-    color: white;
+    color: var(--text);
     margin-top: 2px;
-
-    /* border: 1px solid var(--pink); */
-    /* margin-right: 20px;
-    padding: 13px;
-    border-radius: 9px; */
+    text-shadow: 1px 1px red, 1px 2px black;
+    text-shadow: 1px 1px #51d6ff, 1px 2px black;
 }
+.resume a {
+    background-color: #e6f2ff;
+}
+
 
 .nav {
     font-family: 'Bebas Neue', sans-serif;
@@ -114,16 +133,15 @@
     
     backdrop-filter: blur(10px);
 
-    /* border-radius: 0 0 4px 0; */
-    transition: all 0.25s ease-in-out;
+    transition: all .25s ease-in-out;
 
-    perspective: 200px;
+    /* perspective: 200px; */
 }
 .nav.show {
     /* left: 0px;
     transform: rotateX(0deg) rotateY(0deg);
     transform-style: preserve-3d; */
-
+    backdrop-filter: blur(100px);
     left: 0px;
 }
 .nav.hide {
@@ -131,7 +149,9 @@
     transform: rotateX(0deg) rotateY(90deg);
     transform-style: preserve-3d; */
 
-    left: -198px;
+    /* 4 */
+    /* left: -198px; */
+    left: -268px;
 }
 
 
@@ -143,42 +163,69 @@
 .button {
     width: 100%;
     height: 70px;
+    
     text-decoration: none;
-    color: white;
+    color: var(--text);
     font-size: 50px;
+
     display: flex;
     align-items: center;
-    gap: 10px;
     justify-content: flex-end;
+}
+.button:hover {
+    background-color: var(--black);
 }
 .button div {
     padding-right: 40px;
     margin-top: 5px;
 }
-.button:hover {
-    background-color: var(--black);
-}
+
 
 .resume {
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
     margin-top: 30px;
 }
-.resume div {
+.resume a {
     color: var(--pink);
     font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
     border: 1px solid var(--pink);
+    text-decoration: none;
     
     margin-right: 26px;
     padding: 18px;
     border-radius: 9px;
     padding-top: 21px;
-    /* letter-spacing: 0px; */
 }
 
 @media (min-width: 1024px) {
-    
+    .toggler {
+        height: 100vh;
+        width: 70px;
+    }
+    .toggler.hide {
+        top: 0;
+    }
+    .toggler .transparent {
+        display: block;
+    }
+    .toggler .opaque {
+        height: calc(100vh - 70px);
+    }
+    .burger {
+        right: auto;
+    }
+    .logo {
+        display: none;
+    }
     .nav {
         width: 340px;
     }

@@ -28,6 +28,7 @@ body {
 
 
 :root {
+    --text: white;
     --black: #1a2026;
     --gray: #1e252c;
     --lightgray: #252e38;
@@ -39,6 +40,12 @@ body {
     --green: #8dd68e;
     --darkblue: #1c2f4d;
     --spacing-body: max(6px, 2vmin);
+
+    --black: white;
+    --text: black;
+    --lightgray: rgb(230, 230, 230);
+    --gray: rgb(244, 244, 244);
+    --pink: #51d6ff;
 }
 .bg-black {background-color: var(--black)}
 .bg-gray {background-color: var(--gray)}
