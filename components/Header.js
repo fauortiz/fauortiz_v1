@@ -50,6 +50,9 @@ export default function Header({ isDesktop }) {
         setShowNav(prev => !prev)
         setShowToggler(true)
     }
+    function hideNav() {
+        setShowNav(false)
+    }
 
     console.log('Navbar')
     return (
@@ -70,16 +73,16 @@ export default function Header({ isDesktop }) {
                 <button className={styles.closer} onClick={toggleNav}>
                     <div>F</div>    
                     </button>
-                <a href="#Home" className={`${styles.button} ${styles.home}`}>
+                <a href="#Home" onClick={hideNav} className={`${styles.button} ${styles.home}`}>
                     <div className={styles.link}>Home</div>
                     </a>
-                <a href="#Projects" className={`${styles.button} ${styles.projects}`}>
+                <a href="#Projects" onClick={hideNav} className={`${styles.button} ${styles.projects}`}>
                     <div className={styles.link}>Projects</div>
                     </a>
-                <a href="#Experience" className={`${styles.button} ${styles.experience}`}>
+                <a href="#Experience" onClick={hideNav} className={`${styles.button} ${styles.experience}`}>
                     <div className={styles.link}>Experience</div>
                     </a>
-                <a href="#Contact" className={`${styles.button} ${styles.contact}`}>
+                <a href="#Contact" onClick={hideNav} className={`${styles.button} ${styles.contact}`}>
                     <div className={styles.link}>Contact</div>
                     </a>
                 <div className={`${styles.resume}`}>

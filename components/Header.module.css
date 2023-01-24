@@ -18,7 +18,7 @@
     
     z-index: 902;
     
-    transition: all .25s ease-in-out;
+    transition: all 0.15s cubic-bezier(1, 0, 0.5, 1);
 }
 .toggler.hide {
     top: -70px;
@@ -29,18 +29,18 @@
 .toggler .transparent {
     background-color: transparent;
     height: 70px;
-    transition: all .25s ease-in-out;
+    transition: all 0.15s cubic-bezier(1, 0, 0.5, 1);
 
     display: none;
 }
 .toggler .opaque {
     background-color: var(--lightgray);
     height: 70px;
-    transition: all .25s ease-in-out;
+    transition: all 0.15s cubic-bezier(1, 0, 0.5, 1);
 }
 .toggler.navShow {
     height: 70px;
-    width: 70px;
+    /* width: 70px; */
 }
 .toggler.navShow .transparent {
     height: 0px;
@@ -74,10 +74,7 @@
     display: flex;
     justify-content: flex-start;
     background-color: var(--lightgray);
-    transition: all .25s ease-in-out;
-}
-.toggler.navShow .logo {
-    left: -500px;
+    transition: all 0.15s cubic-bezier(1, 0, 0.5, 1);
 }
 .closer {
     /* counteracting <button> defaults */
@@ -109,9 +106,7 @@
     text-shadow: 1px 1px red, 1px 2px black;
     text-shadow: 1px 1px #51d6ff, 1px 2px black;
 }
-.resume a {
-    background-color: #e6f2ff;
-}
+
 
 
 .nav {
@@ -120,7 +115,7 @@
     /* text-transform: uppercase; */
 
     background-color: var(--gray);
-    width: 268px;
+    width: 100vw;
     height: 100vh;
     position: absolute;
     
@@ -130,10 +125,10 @@
     flex-direction: column;
 
     z-index: 901;
-    
-    backdrop-filter: blur(10px);
 
-    transition: all .25s ease-in-out;
+    opacity: 0;
+    
+    transition: all 0.15s cubic-bezier(1, 0, 0.5, 1);
 
     /* perspective: 200px; */
 }
@@ -141,8 +136,8 @@
     /* left: 0px;
     transform: rotateX(0deg) rotateY(0deg);
     transform-style: preserve-3d; */
-    backdrop-filter: blur(100px);
     left: 0px;
+    opacity: 1;
 }
 .nav.hide {
     /* left: -180px;
@@ -151,10 +146,8 @@
 
     /* 4 */
     /* left: -198px; */
-    left: -268px;
+    left: -100vw;
 }
-
-
 
 
 
@@ -198,6 +191,7 @@
     font-weight: 600;
     text-transform: uppercase;
     border: 1px solid var(--pink);
+    background-color: var(--pink-clear);
     text-decoration: none;
     
     margin-right: 26px;
@@ -206,7 +200,7 @@
     padding-top: 21px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
     .toggler {
         height: 100vh;
         width: 70px;
@@ -228,8 +222,10 @@
     }
     .nav {
         width: 340px;
+        opacity: 1;
     }
     .nav.hide {
+        /* -340px + 70px */
         left: -270px;
     }
     .resume div {
