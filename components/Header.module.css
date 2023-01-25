@@ -132,11 +132,6 @@ write 'MENU' in small horizontal small caps
     height: 100vh;
     position: absolute;
     
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
     z-index: 901;
 
     opacity: 0;
@@ -161,7 +156,19 @@ write 'MENU' in small horizontal small caps
     /* left: -198px; */
     left: -100vw;
 }
+.navSpacer {
+    display: none;
+}
+.navContainer {
+    height: 100%;
+    width: 100%;
+    margin-top: 0px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
 
 
@@ -216,6 +223,7 @@ write 'MENU' in small horizontal small caps
     padding-top: 21px;
 }
 
+/* desktop/lengthwise tablet */
 @media (min-width: 640px) {
 
     .toggler {
@@ -251,14 +259,33 @@ write 'MENU' in small horizontal small caps
 
 }
 
-@media (max-height: 550px) {
-    .nav > a:first-of-type {
-        margin-top: 72px;
+/* lengthwise, but tiny height */
+@media (max-height: 430px) {
+    .navSpacer {
+        display: block;
+        height:70px;
     }
+    .navContainer {
+        height: calc(100% - 70px);
+        width: 100%;
+    }
+    .navContainer > a:first-of-type {
+        margin-top: 115px;
+    }
+    .navContainer {
+        overflow: scroll;
+    }
+    .resume {
+        margin-bottom: 10px;
+    }
+}
+@media (max-height: 550px) {
+
     .button {
         height: 55px;
     }
     .resume {
         margin-top: 0px;
     }
+
 }

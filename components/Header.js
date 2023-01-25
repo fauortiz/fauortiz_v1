@@ -69,25 +69,28 @@ export default function Header({ isDesktop }) {
             </button>
 
             <nav className={`${styles.nav} ${showNav ? styles.show : styles.hide}`}>
-
+    
                 <button className={styles.closer} onClick={toggleNav}>
                     <div>F</div>    
                     </button>
-                <a href="#Home" onClick={hideNav} className={styles.button}>
-                    <div className={styles.link}>Home</div>
-                    </a>
-                <a href="#Projects" onClick={hideNav} className={styles.button}>
-                    <div className={styles.link}>Projects</div>
-                    </a>
-                <a href="#Experience" onClick={hideNav} className={styles.button}>
-                    <div className={styles.link}>Experience</div>
-                    </a>
-                <a href="#Contact" onClick={hideNav} className={styles.button}>
-                    <div className={styles.link}>Contact</div>
-                    </a>
-                <div className={`${styles.resume}`}>
-                    <a href="#Contact" className={styles.link}>View my Resume</a>
-                    </div>
+                <div className={styles.navSpacer}></div>
+                <div className={styles.navContainer}>
+                    <a href="#Home" onClick={hideNav} className={styles.button}>
+                        <div className={styles.link}>Home</div>
+                        </a>
+                    <a href="#Projects" onClick={hideNav} className={styles.button}>
+                        <div className={styles.link}>Projects</div>
+                        </a>
+                    <a href="#Experience" onClick={hideNav} className={styles.button}>
+                        <div className={styles.link}>Experience</div>
+                        </a>
+                    <a href="#Contact" onClick={hideNav} className={styles.button}>
+                        <div className={styles.link}>Contact</div>
+                        </a>
+                    <div className={`${styles.resume}`}>
+                        <a href="#Contact" className={styles.link}>View my Resume</a>
+                        </div>
+                </div>
             </nav>
         </header>
     )
