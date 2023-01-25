@@ -26,7 +26,7 @@ write 'MENU' in small horizontal small caps
     
     z-index: 902;
     
-    transition: all 0.15s cubic-bezier(1, 0, 0.5, 1);
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
 }
 .toggler.hide {
     top: -70px;
@@ -37,14 +37,14 @@ write 'MENU' in small horizontal small caps
 .toggler .transparent {
     background-color: transparent;
     height: 70px;
-    transition: all 0.15s cubic-bezier(1, 0, 0.5, 1);
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
 
     display: none;
 }
 .toggler .opaque {
     background-color: var(--lightgray);
     height: 70px;
-    transition: all 0.15s cubic-bezier(1, 0, 0.5, 1);
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
 }
 .toggler.navShow {
     height: 70px;
@@ -82,7 +82,7 @@ write 'MENU' in small horizontal small caps
     display: flex;
     justify-content: flex-start;
     background-color: var(--lightgray);
-    transition: all 0.15s cubic-bezier(1, 0, 0.5, 1);
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
 }
 .closer {
     /* counteracting <button> defaults */
@@ -111,6 +111,7 @@ write 'MENU' in small horizontal small caps
     font-size: 32px;
     color: var(--text);
     margin-top: 2px;
+
     text-shadow: 1px 1px red, 1px 2px black;
     text-shadow: 1px 1px #51d6ff, 1px 2px black;
 }
@@ -136,7 +137,7 @@ write 'MENU' in small horizontal small caps
 
     opacity: 0;
     
-    transition: all 0.15s cubic-bezier(1, 0, 0.5, 1);
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
 
     /* perspective: 200px; */
 }
@@ -151,9 +152,6 @@ write 'MENU' in small horizontal small caps
     /* left: -180px;
     transform: rotateX(0deg) rotateY(90deg);
     transform-style: preserve-3d; */
-
-    /* 4 */
-    /* left: -198px; */
     left: -100vw;
 }
 .navSpacer {
@@ -205,17 +203,19 @@ write 'MENU' in small horizontal small caps
     margin-top: 30px;
 }
 .resume a {
-    color: var(--pink);
-    color: black;
+
     font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
+    text-decoration: none;
+
+    color: var(--pink);
     border: 1px solid var(--pink);
     background-color: var(--pink-clear);
-    border: 1px solid #cacaca;;
+    color: black;
+    border: 1px solid #cacaca;
     background-color: #00cbff38;
-    text-decoration: none;
     
     margin-right: 26px;
     padding: 18px;
@@ -260,7 +260,7 @@ write 'MENU' in small horizontal small caps
 }
 
 /* lengthwise, but tiny height */
-@media (max-height: 430px) {
+@media (max-height: 550px) {
     .navSpacer {
         display: block;
         height:70px;
@@ -268,24 +268,17 @@ write 'MENU' in small horizontal small caps
     .navContainer {
         height: calc(100% - 70px);
         width: 100%;
+        justify-content: flex-start;
+        overflow: auto;
     }
-    .navContainer > a:first-of-type {
-        margin-top: 115px;
+    .navContainer .button:first-of-type {
+        margin-top: auto;
     }
-    .navContainer {
-        overflow: scroll;
-    }
-    .resume {
-        margin-bottom: 10px;
-    }
-}
-@media (max-height: 550px) {
-
     .button {
         height: 55px;
     }
     .resume {
         margin-top: 0px;
+        margin-bottom: auto;
     }
-
 }

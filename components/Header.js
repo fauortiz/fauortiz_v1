@@ -88,7 +88,7 @@ export default function Header({ isDesktop }) {
                         <div className={styles.link}>Contact</div>
                         </a>
                     <div className={`${styles.resume}`}>
-                        <a href="#Contact" className={styles.link}>View my Resume</a>
+                        <a href="#Home" className={styles.link}>View my Resume</a>
                         </div>
                 </div>
             </nav>
