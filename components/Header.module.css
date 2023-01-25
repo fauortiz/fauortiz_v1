@@ -135,24 +135,14 @@ write 'MENU' in small horizontal small caps
     
     z-index: 901;
 
-    opacity: 0;
-    
-    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
-
-    /* perspective: 200px; */
-}
-.nav.show {
-    /* left: 0px;
-    transform: rotateX(0deg) rotateY(0deg);
-    transform-style: preserve-3d; */
     left: 0px;
     opacity: 1;
+
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
 }
 .nav.hide {
-    /* left: -180px;
-    transform: rotateX(0deg) rotateY(90deg);
-    transform-style: preserve-3d; */
     left: -100vw;
+    opacity: 0;
 }
 .navSpacer {
     display: none;
@@ -182,6 +172,8 @@ write 'MENU' in small horizontal small caps
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
+    /* user-select: none; */
 }
 .button:hover {
     background-color: var(--black);
@@ -200,7 +192,7 @@ write 'MENU' in small horizontal small caps
     align-items: center;
     justify-content: flex-end;
 
-    margin-top: 30px;
+    margin-top: 10px;
 }
 .resume a {
 
@@ -247,39 +239,42 @@ write 'MENU' in small horizontal small caps
     }
     .nav {
         width: 271px;
-        opacity: 1;
     }
     .nav.hide {
         /* -271px + 70px */
         left: -201px;
+        /* disable mobile nav fade-in */
+        opacity: 1;
     }
     .resume div {
         margin-right: 20px;
     }
-
 }
 
-/* small height */
+/* adjusts navContainer overflow on lower heights */
 @media (max-height: 550px) {
+
     .navSpacer {
+        /* lowers center of div */
         display: block;
-        height:70px;
+        height: 70px;
     }
     .navContainer {
-        height: calc(100% - 70px);
-        width: 100%;
-        justify-content: flex-start;
         overflow: auto;
-        padding: 50px 0 50px 0;
+        
+        /* lowers center of div */
+        height: calc(100% - 70px);
+        
+        /* pads bottom for overflow */
+        padding-bottom: 70px;
+
+        /* this + margin: auto fixes overflow errors */
+        justify-content: flex-start;
     }
     .navContainer .button:first-of-type {
         margin-top: auto;
     }
-    .button {
-        height: 55px;
-    }
     .resume {
-        margin-top: 0px;
         margin-bottom: auto;
     }
 }

@@ -45,7 +45,6 @@ export default function Header({ isDesktop }) {
         });
     }, [])
 
-
     function toggleNav() {
         setShowNav(prev => !prev)
         setShowToggler(true)
@@ -68,7 +67,7 @@ export default function Header({ isDesktop }) {
                     </div>
             </button>
 
-            <nav className={`${styles.nav} ${showNav ? styles.show : styles.hide}`}>
+            <nav className={`${styles.nav} ${showNav ? '' : styles.hide}`}>
     
                 <button className={styles.closer} onClick={toggleNav}>
                     <div>F</div>    
