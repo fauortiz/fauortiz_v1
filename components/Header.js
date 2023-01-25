@@ -73,16 +73,16 @@ export default function Header({ isDesktop }) {
                 <button className={styles.closer} onClick={toggleNav}>
                     <div>F</div>    
                     </button>
-                <a href="#Home" onClick={hideNav} className={`${styles.button} ${styles.home}`}>
+                <a href="#Home" onClick={hideNav} className={styles.button}>
                     <div className={styles.link}>Home</div>
                     </a>
-                <a href="#Projects" onClick={hideNav} className={`${styles.button} ${styles.projects}`}>
+                <a href="#Projects" onClick={hideNav} className={styles.button}>
                     <div className={styles.link}>Projects</div>
                     </a>
-                <a href="#Experience" onClick={hideNav} className={`${styles.button} ${styles.experience}`}>
+                <a href="#Experience" onClick={hideNav} className={styles.button}>
                     <div className={styles.link}>Experience</div>
                     </a>
-                <a href="#Contact" onClick={hideNav} className={`${styles.button} ${styles.contact}`}>
+                <a href="#Contact" onClick={hideNav} className={styles.button}>
                     <div className={styles.link}>Contact</div>
                     </a>
                 <div className={`${styles.resume}`}>

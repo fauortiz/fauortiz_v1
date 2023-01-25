@@ -1,5 +1,13 @@
+/* 
+TODO
+SVG toggler icon
 
-
+possible TODO
+show on hover, hide on unhover?
+animated logo?
+write 'MENU' in small horizontal small caps
+	or sideways vertical small caps
+ */
 
 .toggler {
     
@@ -99,7 +107,7 @@
     align-items: center;
     justify-content: center;
     
-    font-family: 'Yatra One', cursive;
+    font-family: 'Yatra One', sans-serif;
     font-size: 32px;
     color: var(--text);
     margin-top: 2px;
@@ -115,6 +123,11 @@
     /* text-transform: uppercase; */
 
     background-color: var(--gray);
+    /* background: rgb(0,0,0);
+    background: -moz-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(230,230,230,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(230,230,230,1) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(230,230,230,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#e6e6e6",GradientType=1); */
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -186,12 +199,15 @@
 }
 .resume a {
     color: var(--pink);
+    color: black;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
     border: 1px solid var(--pink);
     background-color: var(--pink-clear);
+    border: 1px solid #cacaca;;
+    background-color: #00cbff38;
     text-decoration: none;
     
     margin-right: 26px;
@@ -201,6 +217,7 @@
 }
 
 @media (min-width: 640px) {
+
     .toggler {
         height: 100vh;
         width: 70px;
@@ -221,15 +238,27 @@
         display: none;
     }
     .nav {
-        width: 340px;
+        width: 271px;
         opacity: 1;
     }
     .nav.hide {
-        /* -340px + 70px */
-        left: -270px;
+        /* -271px + 70px */
+        left: -201px;
     }
     .resume div {
         margin-right: 20px;
     }
 
+}
+
+@media (max-height: 550px) {
+    .nav > a:first-of-type {
+        margin-top: 72px;
+    }
+    .button {
+        height: 55px;
+    }
+    .resume {
+        margin-top: 0px;
+    }
 }
