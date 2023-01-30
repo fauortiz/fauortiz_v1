@@ -1,7 +1,7 @@
 import styles from './Header.module.css'
 import { useState, useEffect } from 'react'
 
-export default function Header({ isDesktop }) {
+export default function Header() {
 
     // 
     const [showNav, setShowNav] = useState(false);
@@ -14,7 +14,7 @@ export default function Header({ isDesktop }) {
 
             // determine if user scrolled up
             // console.log(`${window.scrollY} < ${lastScrollY}`)
-            if (window.scrollY < lastScrollY) {
+            if (window.scrollY === 0 || (window.scrollY < lastScrollY)) {
                 // if (isDesktop) {
                 //     setShowNav(true)
                 // }
@@ -75,19 +75,23 @@ export default function Header({ isDesktop }) {
                 <div className={styles.navSpacer}></div>
                 <div className={styles.navContainer}>
                     <a href="#Home" onClick={hideNav} className={styles.button}>
+                        <div className={styles.bullet}><div><div></div></div></div>
                         <div className={styles.link}>Home</div>
                         </a>
                     <a href="#Projects" onClick={hideNav} className={styles.button}>
+                    <div className={styles.bullet}><div><div></div></div></div>
                         <div className={styles.link}>Projects</div>
                         </a>
                     <a href="#Experience" onClick={hideNav} className={styles.button}>
+                        <div className={styles.bullet}><div><div></div></div></div>
                         <div className={styles.link}>Experience</div>
                         </a>
                     <a href="#Contact" onClick={hideNav} className={styles.button}>
+                        <div className={styles.bullet}><div><div></div></div></div>
                         <div className={styles.link}>Contact</div>
                         </a>
                     <div className={`${styles.resume}`}>
-                        <a href="#Home" className={styles.link}>View my Resume</a>
+                        <a href="#Home">View my Resume</a>
                         </div>
                 </div>
             </nav>
