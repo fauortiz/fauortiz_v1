@@ -1,13 +1,12 @@
 import Head from 'next/head'
-// import Footer from '@components/Footer'
+import Background from '@components/Background'
 import Header from '@components/Header'
 import { useState, useEffect } from 'react'
 
 
-
 export default function Home() {
     
-    const { height, width } = useWindowSize()
+    const { windowHeight, windowWidth } = useWindowSize()
 
     console.log('Home')
     return (
@@ -17,11 +16,9 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <div id='stars1' className="stars"></div>
-            <div id='stars2' className="stars"></div>
-            <div id='stars3' className="stars"></div>
+            <Background />
             
-            <Header isDesktop={ width >= 1024 } />
+            <Header />
             
             <div className='hero'>
                 <div>Francis Ortiz</div>
