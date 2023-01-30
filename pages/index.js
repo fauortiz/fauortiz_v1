@@ -15,10 +15,8 @@ export default function Home() {
             <Head>
                 <title>Francis Ortiz</title>
                 <link rel="icon" href="/favicon.ico" />
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300;400;500;600;700&family=Mulish:wght@200;300;400;500;600;700;800;900&family=Yatra+One&display=swap" rel="stylesheet" />
             </Head>
+
             <div id='stars1' className="stars"></div>
             <div id='stars2' className="stars"></div>
             <div id='stars3' className="stars"></div>
@@ -26,15 +24,27 @@ export default function Home() {
             <Header isDesktop={ width >= 1024 } />
             
             <div className='hero'>
-                <div>Francis Ortiz aasdfasdfsdfasdasdsadasdasdfa</div>
-            </div>
+                <div>Francis Ortiz</div>
+                {/* <div>Francis Ortiz aasdfasdfsdfasdasdsadasdasdfa</div> */}
+                </div>
 
             <main>  
-                <div id="Home">Home</div> 
-                <div id="Projects">Projects</div> 
-                <div id="Experience">Experience</div> 
-                <div id="Contact">Contact</div>
-                <div>--end--</div>
+                <section id="Home">
+                    <h1>Home</h1>
+                    <p>Content of Home</p>
+                    </section>
+                <section id="Projects">
+                    <h1>Projects</h1>
+                    <p>Content of Projects</p>
+                    </section>
+                <section id="Experience">
+                    <h1>Experience</h1>
+                    <p>Content of Experience</p>
+                    </section>
+                <section id="Contact">
+                    <h1>Contact</h1>
+                    <p>Content of Contact</p>
+                    </section>
             </main>
         </div>
     )

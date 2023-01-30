@@ -1,31 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300;400;500;600;700&family=Mulish:wght@200;300;400;500;600;700;800;900&family=Yatra+One&display=swap');
 
 html, body {
     padding: 0;
     margin: 0;
 }
 
-body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 5s ease infinite;
-    height: 100vh;
-    background-attachment: fixed;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
-}
-
 * {
     box-sizing: border-box;
 }
-
 
 :root {
     --text: white;
@@ -49,15 +31,28 @@ body {
     --pink: #51d6ff;
     --pink-clear: #51d6ff12;
 
+    --gradient1: rgb(13 17 23);
+    --gradient2: rgb(34 41 52);
 }
-.bg-black {background-color: var(--black)}
-.bg-gray {background-color: var(--gray)}
-.bg-violet {background-color: var(--violet)}
-.bg-hotpink {background-color: var(--hotpink)}
-.bg-pink {background-color: var(--pink)}
-.bg-cyan {background-color: var(--cyan)}
-.bg-seafoam {background-color: var(--seafoam)}
-.bg-green {background-color: var(--green)}
+
+
+
+body {
+    background: linear-gradient(0deg, var(--gradient1) 0%, var(--gradient2) 25%, var(--gradient1) 50%, var(--gradient2) 75%, var(--gradient1) 100%);
+    background-size: 100% 4000%;
+    animation: gradient 6s linear infinite;
+    height: 100vh;
+    background-attachment: fixed;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
 
 
 .home {
@@ -67,119 +62,14 @@ body {
     align-items: center;
     color: white;
 
-}
-
-header {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    z-index: 100;
-}
-
-
-.hero {
-    /* background-color: #000000; */
-    font-weight: bold;
-    font-size: 60px;
-
-
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 0px 15px;
-
-    /* responsive */
-    padding: 15px;
-    height: 400px;
-    width: 100vw;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-content: flex-end;
-}
-.frame {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    top: 0px;
-    display: grid;
-    padding-left: calc(100vw - 100%);
-    grid-template-columns: var(--spacing-body) 1fr 1fr var(--spacing-body);
-    grid-template-rows: var(--spacing-body) 1fr var(--spacing-body);
-    grid-template-areas: 
-        "top-edge top-edge top-edge top-edge"
-        "left-edge left-edge main-border right-edge"
-        "bottom-edge bottom-edge bottom-edge bottom-edge";
-}
-.top-edge { grid-area: top-edge; }
-.left-edge { grid-area: left-edge; }
-.right-edge { grid-area: right-edge; }
-.bottom-edge { grid-area: bottom-edge; }
-.edge {
-    background-color: rgba(0, 0, 0, 0.479);
-    backdrop-filter: blur(12px);
-}
-.hero-border {
-    /* border: black 1px solid; */
-    background-color: transparent;
-    grid-area: hero-border;
-}
-.main-border {
-    /* border-left: black 1px solid; */
-    backdrop-filter: blur(12px);
-    background-color: transparent;
-    grid-area: main-border;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    z-index: 1;
-    
-    font-family: 'Mulish', sans-serif;
-    font-size: 16px;
-}
-
-
-@media (min-width: 1024px) {
-
-    .hero, main {
-        --main-width: 55vw;
-    }
-    .home {
-        align-items: flex-end;
-    }
-    .hero {
-        position: fixed;
-        left: 0px;
-        top: 0px;
-        height: 100vh;
-        width: calc(100vw - var(--main-width));
-
-        padding: 25px;
-        padding-left: 95px;
-        flex-direction: column;
-        justify-content: center;
-        align-content: normal;
-    }
-    main {
-        width: var(--main-width);
-    }
-}
-
-main {
-    /* for testing only. separate deets into each 'main' page */
-    justify-content: space-between;
-    height: 2000px;
-
+    min-height: 100vh;
 }
 
 /* based on Parallax Star background in CSS by sarazond */
 .stars {
     position: fixed;
-    z-index: 99;
+    left:0;
+    top:0;
 }
 #stars1 {
     width: 1px;
@@ -232,4 +122,112 @@ main {
 @keyframes animStar {
     from {transform: translateY(0px);}
     to {transform: translateY(-2000px);}
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+.hero {
+    /* background-color: #000000; */
+    /* font-weight: bold; */
+    font-size: 60px;
+    font-family: 'bebas neue', sans-serif;
+    letter-spacing: 1px;
+    /* font-family: 'josefin sans', sans-serif; */
+
+
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 0px 15px;
+
+    /* responsive */
+    padding: 15px;
+    height: 400px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: flex-end;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+
+    z-index: 10;
+
+    background-color: #ffffffb5;
+}
+
+/* compact desktop version */
+@media (min-width: 640px) {
+    .home {
+        padding-left: 70px;
+    }
+    header {
+        width: 0;
+    }
+    .hero {
+        width: calc(100vw - (100vw - 100%));
+    }
+    main {
+        width: calc(100vw - (100vw - 100%)  );
+    }
+}
+
+/* desktop version */
+@media (min-width: 1024px) {
+
+    .hero, main {
+        --main-width: 55vw;
+    }
+    .home {
+        align-items: flex-end;
+    }
+    .hero {
+        position: fixed;
+        left: 70px;
+        top: 0;
+        height: 100vh;
+        
+        flex-direction: column;
+        justify-content: center;
+        align-content: normal;
+
+        width: calc(100vw - var(--main-width) - 70px - (100vw - 100%));
+    }
+    main {
+        width: var(--main-width);
+    }
+}
+
+.hero {
+    outline: yellow 1px solid;
+}
+main {
+    /* for testing main content spacing only. separate deets into each 'main' page */
+    justify-content: space-between;
+    outline: red 1px solid;
+}
+main * {
+    outline: yellow 1px solid;
+}
+section {
+    height: 100vh;
+}
+section h1 {
+    margin-top: 100px;
 }
