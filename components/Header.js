@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 
 export default function Header() {
 
-    // 
     const [showNav, setShowNav] = useState(false);
     const [showToggler, setShowToggler] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
@@ -11,7 +10,6 @@ export default function Header() {
     // show/hide navbar on scroll up/down
     useEffect(() => {
         function toggleShowNavbar() {
-
             // determine if user scrolled up
             // console.log(`${window.scrollY} < ${lastScrollY}`)
             if (window.scrollY === 0 || (window.scrollY < lastScrollY)) {
@@ -31,10 +29,35 @@ export default function Header() {
         return () => window.removeEventListener('scroll', toggleShowNavbar)
     }, [lastScrollY])
 
+
+
+    // highlight active section on navbar on scroll
+    useEffect(() => {
+        const scrollY = Math.ceil(window.scrollY)
+        const sections = document.querySelectorAll('section[id]')
+        // console.log(scrollY)
+        sections.forEach(section => {
+            const sectionId = section.getAttribute('id')
+            const sectionHeight = section.offsetHeight
+            const sectionTop = section.offsetTop - 150
+
+            // console.log(`id:${sectionId}, height:${sectionHeight+sectionTop}, active? ${scrollY >= sectionTop && scrollY < sectionTop + sectionHeight}`)
+
+            // if scrollY is within a certain section's height...
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                document.querySelector(`a[href*="${sectionId}"]`).classList.add(styles.active);
+            } else {
+                document.querySelector(`a[href*="${sectionId}"]`).classList.remove(styles.active);
+            }
+        })
+    }, [lastScrollY])
+
+
+
     // smooth scrolling anchor navigation
     useEffect(() => {
         document.querySelectorAll(`.${styles.button}`).forEach(anchor => {
-            console.log(anchor.getAttribute('href'))
+            // console.log(anchor.getAttribute('href'))
             anchor.addEventListener('click', event => {
                 event.preventDefault();
         
@@ -44,6 +67,8 @@ export default function Header() {
             });
         });
     }, [])
+
+
 
     function toggleNav() {
         setShowNav(prev => !prev)
@@ -74,24 +99,20 @@ export default function Header() {
                     </button>
                 <div className={styles.navSpacer}></div>
                 <div className={styles.navContainer}>
-                    <a href="#Home" onClick={hideNav} className={styles.button}>
+                    <a href="#About" onClick={hideNav} className={styles.button}>
                         <div className={styles.bullet}><div><div></div></div></div>
-                        <div className={styles.link}>Home</div>
+                        <div className={styles.link}>About</div>
                         </a>
                     <a href="#Projects" onClick={hideNav} className={styles.button}>
                     <div className={styles.bullet}><div><div></div></div></div>
                         <div className={styles.link}>Projects</div>
-                        </a>
-                    <a href="#Experience" onClick={hideNav} className={styles.button}>
-                        <div className={styles.bullet}><div><div></div></div></div>
-                        <div className={styles.link}>Experience</div>
                         </a>
                     <a href="#Contact" onClick={hideNav} className={styles.button}>
                         <div className={styles.bullet}><div><div></div></div></div>
                         <div className={styles.link}>Contact</div>
                         </a>
                     <div className={`${styles.resume}`}>
-                        <a href="#Home">View my Resume</a>
+                        <a href="#About">View my Resume</a>
                         </div>
                 </div>
             </nav>

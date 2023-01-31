@@ -202,6 +202,9 @@ write 'MENU' in small horizontal small caps
 .button:last-of-type {
     box-shadow: 0 1px 0 var(--nav-border) inset, 0 -1px 0 var(--nav-border) inset;
 }
+.button.active {
+    background-color: var(--black);
+}
 .button:hover {
     background-color: var(--black);
 }

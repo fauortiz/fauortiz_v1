@@ -15,32 +15,25 @@ export default function Home() {
                 <title>Francis Ortiz</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-
             <Background />
-            
             <Header />
             
             <div className='hero'>
                 <div>Francis Ortiz</div>
-                {/* <div>Francis Ortiz aasdfasdfsdfasdasdsadasdasdfa</div> */}
                 </div>
 
             <main>  
-                <section id="Home">
-                    <h1>Home</h1>
-                    <p>Content of Home</p>
+                <section id="About">
+                    <h1>About</h1>
+<p>Content of About</p>
                     </section>
                 <section id="Projects">
                     <h1>Projects</h1>
-                    <p>Content of Projects</p>
-                    </section>
-                <section id="Experience">
-                    <h1>Experience</h1>
-                    <p>Content of Experience</p>
+<p>Content of Projects</p>
                     </section>
                 <section id="Contact">
                     <h1>Contact</h1>
-                    <p>Content of Contact</p>
+<p>Content of Contact</p>
                     </section>
             </main>
         </div>
