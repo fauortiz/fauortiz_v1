@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Background from '@components/Background'
 import Header from '@components/Header'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
                     </section>
                 <section id="Projects">
                     <h1>Projects</h1>
+                    <Image src="/shiristory.png" alt="shiristory" width='500px' height='500px' />
 <p>Content of Projects</p>
                     </section>
                 <section id="Contact">
