@@ -20,21 +20,35 @@ export default function Home() {
             <Header />
             
             <div className='hero'>
-                <div>Francis Ortiz</div>
+                <div>Hello! I'm Francis Ortiz, </div>
                 </div>
 
             <main>  
                 <section id="About">
-                    <h1>About</h1>
-<p>Content of About</p>
+<h1>About Me</h1>
+<div className="image me">
+    <Image 
+        src="/me.png"
+        alt="photo"
+        layout="fill"
+    />
+</div>
                     </section>
                 <section id="Projects">
-                    <h1>Projects</h1>
-                    <Image src="/shiristory.png" alt="shiristory" width='500px' height='500px' />
+<h1>Projects</h1>
+<div className="image shiristory">
+    <Image 
+        src="/shiristory.png"
+        alt="shiristory"
+        layout="fill"
+        // width='500px'
+        // height='500px'
+    />
+</div>
 <p>Content of Projects</p>
                     </section>
                 <section id="Contact">
-                    <h1>Contact</h1>
+<h1>Contact</h1>
 <p>Content of Contact</p>
                     </section>
             </main>

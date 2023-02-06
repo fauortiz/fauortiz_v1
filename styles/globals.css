@@ -36,8 +36,11 @@ html, body {
     --gradient2: rgb(34 41 52);
     --nav-border: #dadada;
     --nav-bullet: #a0a0a0;
-    --nav-resume-border: #cacaca;
-    --nav-resume-bg: #00cbff38;
+    --nav-resume-text: white;
+    --nav-resume-border: black;
+    --nav-resume-bg: #1f1f1f;
+
+    --bright: #9affe0;
 }
 
 
@@ -170,7 +173,7 @@ main {
 main {
     outline: #626695 1px solid;
 }
-main * {
+main > * {
     outline: #333333 1px solid;
 }
 
@@ -183,3 +186,38 @@ section h1 {
     margin-top: 120px;
 }
 
+.image {
+    position: relative;
+    /* backdrop-filter: blur(1px); */
+    /* z-index: 1; */
+
+    background-color: #004e65fe;
+    transition: background-color 0.15s linear;
+}
+.image.me {
+    width: min(100vw, 500px);
+    /* TODO kinda hacky */
+    height: min(100vw, 625px);
+}
+.image.shiristory {
+    width: min(100vw, 500px);
+    /* TODO kinda hacky */
+    height: min(100vw, 500px);
+}
+.image span {
+    mix-blend-mode: screen;
+
+    filter: grayscale(1);
+    transition: all 0.15s linear;
+}
+.image:hover {
+    background-color: black;
+    /* outline: none; */
+}
+.image:hover span {
+    filter: none;
+}
+h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+}
