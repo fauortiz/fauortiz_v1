@@ -167,6 +167,7 @@ write 'MENU' in small horizontal small caps
     position: relative;
     width: 0px;
     height: 30px;
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
 }
 .bullet > div {
     position: absolute;
@@ -182,6 +183,9 @@ write 'MENU' in small horizontal small caps
     top: 7px;
     left: -10px;
     position: relative;
+}
+.button.active .bullet {
+    margin-left: 26px;
 }
 .button {
     width: 100%;
@@ -206,7 +210,7 @@ write 'MENU' in small horizontal small caps
     background-color: var(--black);
 }
 .button:hover {
-    background-color: var(--black);
+    background-color: var(--bright);
 }
 .link {
     padding-right: 40px;
@@ -222,7 +226,7 @@ write 'MENU' in small horizontal small caps
     align-items: center;
     justify-content: flex-end;
 
-    margin-top: 10px;
+    margin-top: 30px;
 }
 .resume a {
 
@@ -232,17 +236,32 @@ write 'MENU' in small horizontal small caps
     text-transform: uppercase;
     text-decoration: none;
 
-    color: var(--pink);
+    /* color: var(--pink);
     border: 1px solid var(--pink);
-    background-color: var(--pink-clear);
-    color: var(--text);
+    background-color: var(--pink-clear); */
+    color: var(--nav-resume-text);
     border: 1px solid var(--nav-resume-border);
     background-color: var(--nav-resume-bg);
     
-    margin-right: 26px;
-    padding: 18px;
+    margin-right: 40px;
+    
+    width: 220px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* padding: 18px; */
     border-radius: 9px;
-    padding-top: 21px;
+    /* padding-top: 21px; */
+}
+.resume a:hover {
+    background-color: var(--bright);
+    color: var(--text);
+    font-weight: 700;
+}
+.resume a span {
+    padding-top: 6px;
 }
 
 /* desktop/lengthwise tablet */
@@ -314,5 +333,6 @@ write 'MENU' in small horizontal small caps
     }
     .resume {
         margin-bottom: auto;
+        margin-top: 10px;
     }
 }

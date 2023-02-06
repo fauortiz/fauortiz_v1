@@ -113,7 +113,7 @@ export default function Header() {
                         <div className={styles.link}>Contact</div>
                         </a>
                     <div className={`${styles.resume}`}>
-                        <a href="#About">View my Resume</a>
+                        <a href="#About"><span>View my Resume</span></a>
                         </div>
                 </div>
             </nav>
