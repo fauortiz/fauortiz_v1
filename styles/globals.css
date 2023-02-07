@@ -85,28 +85,52 @@ header {
 
 
 .hero {
-    /* background-color: #000000; */
-    /* font-weight: bold; */
-    font-size: 60px;
-    font-family: 'bebas neue', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
     letter-spacing: 1px;
-    /* font-family: 'josefin sans', sans-serif; */
     padding: 15px;
 
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
     flex-wrap: wrap;
-    gap: 0px 15px;
     
     /* responsive */
     margin-top: 70px;
     width: 100%;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-content: flex-end;
-    /* TODO decide on this */
-    height: 60vh;
+    justify-content: center;
+    align-content: center;
+    height: calc(100vh - 70px);
 }
+.hero-inner {
+    font-size: min(16.5625vw, 75px, 20vh);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.hero-inner div:nth-of-type(1) {
+    align-self: flex-start;
+    height: 0.9096em;
+    font-size: 0.366667em;
+    margin-left: 0.090909em;
+}
+.hero-inner div:nth-of-type(2) {
+    align-self: flex-start;
+    height: 0.9286em;
+    font-size: 1.166667em;
+    color: #4cffd6;
+}
+.hero-inner div:nth-of-type(3) {
+    height: 0.76666667em;
+}
+.hero-inner div:nth-of-type(4) {
+    height: 1.1em;
+}
+.hero-inner div:nth-of-type(5) {
+    color: #767676;
+    font-size: 0.333333em;
+}
+
 
 main {
     display: flex;
@@ -132,6 +156,10 @@ main {
     .hero {
         width: calc(100vw - (100vw - 100%));
         margin-top: 0;
+        height: 100vh;
+    }
+    .hero-inner {
+        font-size: min(16.5625vw, 80px, 25vh);
     }
     main {
         width: calc(100vw - (100vw - 100%)  );
@@ -156,9 +184,12 @@ main {
         
         flex-direction: column;
         justify-content: center;
-        align-content: normal;
+        align-content: flex-end;
 
         width: calc(100vw - var(--main-width) - 70px - (100vw - 100%));
+    }
+    .hero-inner {
+        font-size: clamp(67px, 4vw, 100px);
     }
     main {
         width: var(--main-width);
@@ -195,7 +226,7 @@ section h1 {
     transition: background-color 0.15s linear;
 }
 .image.me {
-    width: min(100vw, 500px);
+    width: min(80vw, 500px);
     /* TODO kinda hacky */
     height: min(100vw, 625px);
 }
@@ -219,5 +250,7 @@ section h1 {
 }
 h1 {
     font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     text-transform: uppercase;
+    font-weight: 400;
 }

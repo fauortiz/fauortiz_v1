@@ -20,8 +20,14 @@ export default function Home() {
             <Header />
             
             <div className='hero'>
-                <div>Hello! I'm Francis Ortiz, </div>
+                <div className='hero-inner'>
+                    <div>Hello! I'm</div>
+                    <div>Francis Ortiz</div>
+                    <div>Full Stack</div> 
+                    <div>Web Developer</div>
+                    <div>(also an Industrial Engineer)</div>
                 </div>
+            </div>
 
             <main>  
                 <section id="About">
