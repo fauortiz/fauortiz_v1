@@ -2,7 +2,7 @@ import styles from './Header.module.css'
 import { useState, useEffect } from 'react'
 
 
-export default function Header() {
+export default function Header({ windowWidth }) {
 
     const [showNav, setShowNav] = useState(false);
     const [showToggler, setShowToggler] = useState(true);
@@ -76,7 +76,9 @@ export default function Header() {
         setShowToggler(true)
     }
     function hideNav() {
-        setShowNav(false)
+        if (windowWidth < 640) {
+            setShowNav(false)
+        }
     }
 
     console.log('Navbar')
@@ -89,8 +91,13 @@ export default function Header() {
                     <div>F</div>
                     </div>
                 <div className={styles.burger}>
-                    <div>{`${showNav ? 'x' : '='}`}</div>
+                    <div className={`${styles.burgerWrapper} ${showNav ? styles.animate : '' }`}>
+                        <div className={`${styles.bun}`}>
+                            <div className={styles.patty}>
+                            </div>
+                        </div>
                     </div>
+                </div>
             </button>
 
             <nav className={`${styles.nav} ${showNav ? '' : styles.hide}`}>

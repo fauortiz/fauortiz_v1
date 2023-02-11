@@ -16,6 +16,7 @@ write 'MENU' in small horizontal small caps
     border: none;
     padding: 0;
     background-color: transparent;
+    cursor: pointer;
 
     /* float toggler button */
     position: absolute;
@@ -90,6 +91,7 @@ write 'MENU' in small horizontal small caps
     border: none;
     padding: 0;
     background-color: transparent;
+    cursor: pointer;
 
     position: absolute;
     top: 0;
@@ -158,6 +160,8 @@ write 'MENU' in small horizontal small caps
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    border-right: var(--nav-border) 1px solid;
 }
 
 
@@ -232,16 +236,16 @@ write 'MENU' in small horizontal small caps
 
     font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
 
     /* color: var(--pink);
     border: 1px solid var(--pink);
     background-color: var(--pink-clear); */
-    color: var(--nav-resume-text);
     border: 1px solid var(--nav-resume-border);
-    background-color: var(--nav-resume-bg);
+    background-color: var(--bright);
+    color: var(--text);
     
     margin-right: 40px;
     
@@ -254,10 +258,11 @@ write 'MENU' in small horizontal small caps
     /* padding: 18px; */
     border-radius: 9px;
     /* padding-top: 21px; */
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
 }
 .resume a:hover {
-    background-color: var(--bright);
-    color: var(--text);
+    background-color: var(--nav-resume-bg);
+    color: var(--nav-resume-text);
     font-weight: 700;
 }
 .resume a span {
@@ -335,4 +340,82 @@ write 'MENU' in small horizontal small caps
         margin-bottom: auto;
         margin-top: 10px;
     }
+}
+
+
+
+
+
+
+.burgerWrapper {
+    --burger-size: 30px;
+    --burger-speed: 0.3s;
+    --burger-curve: cubic-bezier(0.1, 0.9, 0, 1.2);
+    --burger-curve: cubic-bezier(0.42, 0.91, 0.42, 1);
+    display: block;
+    position: relative;
+    width: var(--burger-size);
+    height: var(--burger-size);
+}
+.burgerWrapper .bun:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--text);
+    transition: all var(--burger-speed) var(--burger-curve);
+    top: 10%;
+    right: 0;
+    box-shadow: 0 0 0 3px var(--lightgray);
+}
+.burgerWrapper .bun:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--text);
+    transition: all var(--burger-speed) var(--burger-curve);
+    bottom: 10%;
+    left: 0;
+    box-shadow: 0 0 0 3px var(--lightgray);
+}
+.burgerWrapper .bun .patty {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: var(--burger-size);
+    width: var(--burger-size);
+}
+.burgerWrapper .bun .patty:before, .burgerWrapper .bun .patty:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--text);
+    transition: all var(--burger-speed) var(--burger-curve);
+    box-shadow: 0 0 0 3px var(--lightgray);
+}
+.burgerWrapper input {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    width: var(--burger-size);
+    height: var(--burger-size);
+    cursor: pointer;
+}
+
+.burgerWrapper input:hover ~ .bun:before, .burgerWrapper input:hover ~ .bun:after, .burgerWrapper input:hover ~ .bun :before, .burgerWrapper input:hover ~ .bun :after {
+    background: #343434;
+}
+
+.burgerWrapper.animate .bun:before, .burgerWrapper.animate .bun:after {
+    width: 0;
+}
+.burgerWrapper.animate .patty:before {
+    transform: rotate(135deg);
+}
+.burgerWrapper.animate .patty:after {
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 0 var(--lightgray);
 }
