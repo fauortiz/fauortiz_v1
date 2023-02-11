@@ -120,7 +120,7 @@ export default function Header({ windowWidth }) {
                         <div className={styles.link}>Contact</div>
                         </a>
                     <div className={`${styles.resume}`}>
-                        <a href="#About"><span>View my Resume</span></a>
+                        <a href="/resume_francis_ortiz.pdf" rel="noopener" target="_blank"><span>View my Resume</span></a>
                         </div>
                 </div>
             </nav>

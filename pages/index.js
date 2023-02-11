@@ -66,7 +66,7 @@ export default function Home() {
         If you're interested, feel free to contact me below.
     </p>
     <div className="button">
-        <a href="mailto:fauortiz@gmail.com" rel="noopener" target="_blank"><span>View my Resume</span></a>
+        <a href="/resume_francis_ortiz.pdf" rel="noopener" target="_blank"><span>View my Resume</span></a>
     </div>
     <div className="button">
         <a href="mailto:fauortiz@gmail.com" rel="noopener" target="_blank"><span>Email Me</span></a>
