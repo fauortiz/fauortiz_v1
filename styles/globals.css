@@ -55,6 +55,7 @@ body {
     animation: gradient 12s linear infinite;
     /* height: 100vh; */
     background-attachment: fixed;
+    background-color: var(--gradient1);
 }
 @keyframes gradient {
     0% {
