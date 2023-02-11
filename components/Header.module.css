@@ -258,7 +258,7 @@ write 'MENU' in small horizontal small caps
     /* padding: 18px; */
     border-radius: 9px;
     /* padding-top: 21px; */
-    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
+    transition: all 0.25s cubic-bezier(0.5, 0, 0, 1);
 }
 .resume a:hover {
     background-color: var(--nav-resume-bg);

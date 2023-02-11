@@ -51,26 +51,37 @@ export default function Home() {
 <section id="Projects">
     <h1>Things I've Made</h1>
     <h2>Featured Project</h2>
-    <div className="image shiristory">
-        <Image src="/shiristory.png" alt="shiristory" layout="fill" />
+    <div className="card featured">
+        <h3 className="shiristory-logo"><a href="https://shiristory.herokuapp.com/" rel="noopener" target="_blank">SHIRISTORY</a></h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <ul>
+        <li>
+            <a href="/CS50x.pdf" rel="noopener" target="_blank"><span>CS50x</span></a>
+        </li>
+        <li>
+            <a href="/CS50W.pdf" rel="noopener" target="_blank"><span>CS50 Web</span></a>
+        </li>
+    </ul>
     </div>
-    <p>Content of Projects</p>
+    {/* <div className="image shiristory"><Image src="/shiristory.png" alt="shiristory" layout="fill" /></div> */}
 </section>
 <section id="Contact">
     <h1>Contact Me</h1>
     <p>
        I'm currently seeking full-time employment opportunities!
 <br></br><br></br>
-        I wish to develop my skills with a team and mentorship.
-        <br></br>
+        My goal is to refine my skills through mentorship and collaboration.
         If you're interested, feel free to contact me below.
-    </p>
-    <div className="button">
-        <a href="/resume_francis_ortiz.pdf" rel="noopener" target="_blank"><span>View my Resume</span></a>
-    </div>
+    </p>    
     <div className="button">
         <a href="mailto:fauortiz@gmail.com" rel="noopener" target="_blank"><span>Email Me</span></a>
     </div>
+    <div className="button">
+        <a href="/resume_francis_ortiz.pdf" rel="noopener" target="_blank"><span>View my Resume</span></a>
+    </div>
+
 </section>
             </main>
         </div>
