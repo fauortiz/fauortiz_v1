@@ -316,15 +316,6 @@ section p:first-of-type {
 
 
 
-.shiristory-logo {
-    font-family: 'Salbabida Sans', sans-serif;
-    color: white;
-    font-size: 5rem;
-    font-weight: 400;
-}
-
-
-
 h1 {
     font-family: 'Bebas Neue', sans-serif;
     text-transform: uppercase;
@@ -350,11 +341,13 @@ p {
 
 .card.featured {
     outline: var(--neon) 1px solid;
-    padding: 37px;
+    padding: min(5vw, 37px);
     /* border-radius: 9px; */
     background-color: transparent;
     position: relative;
     transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
 }
 .card.featured::before {
     content: '';
@@ -369,9 +362,6 @@ p {
     z-index: -1;
     transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
 }
-.card.featured:hover {
-    background-color: #1b3f462e;
-}
 .card.featured:hover::before {
     transform: rotate(2deg) scale(1.01) skew(-1deg, -1deg);
     outline: var(--hotpink) 2px solid;
@@ -380,6 +370,22 @@ p {
     color: white;
     text-decoration: none;
 }
+.card.featured:hover .shiristory-logo a {
+    /* text-shadow: 0 0 0.06em var(--hotpink); */
+    transition: text-shadow .3s ease-in-out;
+}
+.card.featured .shiristory-logo a:hover {
+    text-shadow: 0 0 0.06em #a4003d, 0 0 0.25em #32008b;;
+    transition: text-shadow .6s ease-in-out;
+}
+.shiristory-logo {
+    font-family: 'Salbabida Sans', sans-serif;
+    color: white;
+    font-size: min(5rem, 16vw);
+    font-weight: 400;
+    align-self: center;
+}
+
 
 
 .button {
@@ -455,12 +461,12 @@ ul {
     list-style-type: none;
 }
 li a {
-    /* font-family: 'Josefin sans'; */
     text-decoration: none;
     color: var(--neon);
     position: relative;
-    font-size: 1em;
+    font-size: 1.15em;
     font-weight: 600;
+    line-height: 1.75em;
 }
 li a span::before, li a span::after {
     content: "";
@@ -468,7 +474,7 @@ li a span::before, li a span::after {
     height: 1px;
     background-color: var(--neon);
     position: absolute;
-    top: 18px;
+    top: 1.17em;
     transition: var(--transition);
 }
 /* li a span::before {left: 50%;} */

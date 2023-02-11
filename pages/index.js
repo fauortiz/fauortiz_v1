@@ -58,10 +58,10 @@ export default function Home() {
         </p>
         <ul>
         <li>
-            <a href="/CS50x.pdf" rel="noopener" target="_blank"><span>CS50x</span></a>
+        <a href="https://shiristory.herokuapp.com/" rel="noopener" target="_blank"><span>Live Demo</span></a>
         </li>
         <li>
-            <a href="/CS50W.pdf" rel="noopener" target="_blank"><span>CS50 Web</span></a>
+        <a href="https://github.com/fauortiz/shiristory_v2" rel="noopener" target="_blank"><span>Github</span></a>
         </li>
     </ul>
     </div>
