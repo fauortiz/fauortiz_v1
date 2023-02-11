@@ -59,9 +59,16 @@ export default function Home() {
 <section id="Contact">
     <h1>Contact Me</h1>
     <p>
-        I'm currently seeking full-time employment opportunities where I can rapidly learn from others and improve my skills as a software developer.
+       I'm currently seeking full-time employment opportunities!
+<br></br><br></br>
+        I wish to develop my skills with a team and mentorship.
+        <br></br>
+        If you're interested, feel free to contact me below.
     </p>
-    <div className="email">
+    <div className="button">
+        <a href="mailto:fauortiz@gmail.com" rel="noopener" target="_blank"><span>View my Resume</span></a>
+    </div>
+    <div className="button">
         <a href="mailto:fauortiz@gmail.com" rel="noopener" target="_blank"><span>Email Me</span></a>
     </div>
 </section>
