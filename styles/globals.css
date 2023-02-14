@@ -41,8 +41,8 @@ html, body {
     --gradient2: rgb(34 41 52);
     --gradient-mix: rgb(23 29 37);
     
-    --gradient1: rgb(23 32 59);
-    --gradient2: rgb(16 44 58);
+    --gradient1: rgb(16 44 58);
+    --gradient2: rgb(23 32 59);
     --gradient-mix: rgb(21 35 51);
 
     --nav-border: #dadada;
@@ -52,6 +52,7 @@ html, body {
     --nav-resume-bg: #1f1f1f;
 
     --bright: #9affe0;
+    --bright: #8affe8;
     --light-neon: #a2ffea;
     --neon: #4cffd6;
     --hotpink: #ff116a;
@@ -68,7 +69,7 @@ body {
         var(--gradient2) 75%, 
         var(--gradient1) 100%);
     background-size: 100% 4000%;
-    animation: gradient 12s linear infinite;
+    animation: gradient 30s linear infinite;
     background-attachment: fixed;
     background-color: var(--gradient-mix);
 }
@@ -297,7 +298,7 @@ section > p:first-of-type {
 }
 .image.me:hover::after {
     transform: rotate(-3deg) translate(-3px, 0px);
-    outline: var(--hotpink) 2px solid;
+    outline: var(--hotpink) 3px solid;
 }
 .image.shiristory {
     width: min(60vw, 350px);
@@ -370,7 +371,7 @@ p {
 .featured:hover::before {
     /* transform: rotate(2deg) scale(1.01) skew(-1deg, -1deg); */
     transform: rotate(1deg) scale(1.01) skew(2deg, -2deg);
-    outline: var(--hotpink) 2px solid;
+    outline: var(--hotpink) 3px solid;
 }
 .featured .shiristory-logo a {
     color: white;
@@ -438,7 +439,7 @@ p {
 .card:hover::before {
     /* transform: rotate(2deg) scale(1.01) skew(-1deg, -1deg); */
     transform: rotate(1deg) scale(1.01) skew(2deg, -2deg);
-    outline: var(--hotpink) 2px solid;
+    outline: var(--hotpink) 3px solid;
     z-index: -1;
 }
 
@@ -466,7 +467,7 @@ p {
     background-color: var(--pink-clear); */
     /* border: 1px solid var(--neon); */
     /* background-color: var(--neon); */
-    outline: 1px solid var(--hotpink);
+    outline: 2px solid var(--hotpink);
     color: var(--neon);
     
     width: 220px;
@@ -488,7 +489,7 @@ p {
     content: '';
     width: 100%;
     height: 100%;
-    outline: 1px solid var(--neon);
+    outline: 2px solid var(--neon);
     position: absolute;
     border-radius: 9px;
 }
@@ -497,7 +498,7 @@ p {
     /* color: var(--nav-resume-text); */
     font-weight: 700;
     /* border: 1px solid var(--neon); */
-    outline: 1px solid var(--hotpink);
+    outline: 2px solid var(--hotpink);
 }
 .button a:hover::before {
     transform: rotate(0deg) translate(0px, -4px);

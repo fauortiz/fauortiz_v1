@@ -16,7 +16,7 @@ export default function Home() {
             id: nanoid(),
             name: 'SHIRISTORY',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            tech: ['Django', 'React', 'Heroku'],
+            tech: ['React', 'Django', 'SQL', 'Heroku'],
             liveURL: "https://shiristory.herokuapp.com/",
             githubURL: 'https://github.com/fauortiz/shiristory_v2',
             misc: {
