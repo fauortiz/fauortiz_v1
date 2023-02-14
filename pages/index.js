@@ -1,13 +1,128 @@
 import Head from 'next/head'
-import Background from '@components/Background'
-import Header from '@components/Header'
 import { useState, useEffect } from 'react'
+// import Background from '@components/Background'
+import Header from '@components/Header'
 import Image from 'next/image'
-
+import { nanoid } from 'nanoid'
+import ProjectFeatured from '@components/ProjectFeatured'
+import Project from '@components/Project'
 
 export default function Home() {
     
     const { windowHeight, windowWidth } = useWindowSize()
+
+    const projectsFeatured = [
+        {
+            id: nanoid(),
+            name: 'SHIRISTORY',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            tech: ['Django', 'React', 'Heroku'],
+            liveURL: "https://shiristory.herokuapp.com/",
+            githubURL: 'https://github.com/fauortiz/shiristory_v2',
+            misc: {
+                h3Class: 'shiristory-logo'
+            }
+        }
+    ]
+
+    const projects = [
+        {
+            id: nanoid(),
+            name: 'Portfolio Site',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            tech: ['Next.js', 'Netlify'],
+            liveURL: '',
+            githubURL: 'https://github.com/fauortiz/fauortiz_v1',
+            misc: {}
+        },
+        {
+            id: nanoid(),
+            name: 'Portfolio Site2',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            tech: ['Next.js', 'Netlify'],
+            liveURL: '',
+            githubURL: 'https://github.com/fauortiz/fauortiz_v1',
+            misc: {}
+        },
+        {
+            id: nanoid(),
+            name: 'Portfolio Site3',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            tech: ['Next.js', 'Netlify'],
+            liveURL: '',
+            githubURL: 'https://github.com/fauortiz/fauortiz_v1',
+            misc: {}
+        },
+        {
+            id: nanoid(),
+            name: 'Portfolio Site4',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            tech: ['Next.js', 'Netlify'],
+            liveURL: '',
+            githubURL: 'https://github.com/fauortiz/fauortiz_v1',
+            misc: {}
+        },
+        {
+            id: nanoid(),
+            name: 'Portfolio Site5',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            tech: ['Next.js', 'Netlify'],
+            liveURL: '',
+            githubURL: 'https://github.com/fauortiz/fauortiz_v1',
+            misc: {}
+        },
+        {
+            id: nanoid(),
+            name: 'Portfolio Site6',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            tech: ['Next.js', 'Netlify'],
+            liveURL: '',
+            githubURL: 'https://github.com/fauortiz/fauortiz_v1',
+            misc: {}
+        },
+        {
+            id: nanoid(),
+            name: 'Portfolio Site7',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            tech: ['Next.js', 'Netlify'],
+            liveURL: '',
+            githubURL: 'https://github.com/fauortiz/fauortiz_v1',
+            misc: {}
+        },
+        {
+            id: nanoid(),
+            name: 'Portfolio Site8',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            tech: ['Next.js', 'Netlify'],
+            liveURL: '',
+            githubURL: 'https://github.com/fauortiz/fauortiz_v1',
+            misc: {}
+        },
+    ]
+
+    const projectsFeaturedElements = projectsFeatured.map(({id, name, description, tech, liveURL, githubURL, misc}) => (
+        <ProjectFeatured
+            key={id}
+            name={name}
+            description={description}
+            tech={tech}
+            liveURL={liveURL}
+            githubURL={githubURL}
+            misc={misc}
+        />
+    ))
+
+    const projectsElements = projects.map(({id, name, description, tech, liveURL, githubURL, misc}) => (
+        <Project
+            key={id}
+            name={name}
+            description={description}
+            tech={tech}
+            liveURL={liveURL}
+            githubURL={githubURL}
+            misc={misc}
+        />
+    ))
 
     console.log('Home')
     return (
@@ -16,7 +131,9 @@ export default function Home() {
                 <title>Francis Ortiz</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+
             {/* <Background /> */}
+
             <Header windowWidth={windowWidth} />
             
             <div className='hero'>
@@ -51,21 +168,11 @@ export default function Home() {
 <section id="Projects">
     <h1>Things I've Made</h1>
     <h2>Featured Project</h2>
-    <div className="card featured">
-        <h3 className="shiristory-logo"><a href="https://shiristory.herokuapp.com/" rel="noopener" target="_blank">SHIRISTORY</a></h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <ul>
-        <li>
-        <a href="https://shiristory.herokuapp.com/" rel="noopener" target="_blank"><span>Live Demo</span></a>
-        </li>
-        <li>
-        <a href="https://github.com/fauortiz/shiristory_v2" rel="noopener" target="_blank"><span>Github</span></a>
-        </li>
-    </ul>
+    {projectsFeaturedElements}
+    <h2>Other Projects</h2>
+    <div className="cards">
+        {projectsElements}
     </div>
-    {/* <div className="image shiristory"><Image src="/shiristory.png" alt="shiristory" layout="fill" /></div> */}
 </section>
 <section id="Contact">
     <h1>Contact Me</h1>

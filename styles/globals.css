@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300;400;500;600;700&family=Mulish:wght@200;300;400;500;600;700;800;900&family=Yatra+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:wght@300;400;500;600;700&family=Mulish:wght@200;300;400;500;600;700;800;900&family=Yatra+One&display=swap');
 
 @font-face {
     font-family: 'Salbabida Sans';
@@ -40,6 +40,11 @@ html, body {
     --gradient1: rgb(13 17 23);
     --gradient2: rgb(34 41 52);
     --gradient-mix: rgb(23 29 37);
+    
+    --gradient1: rgb(23 32 59);
+    --gradient2: rgb(16 44 58);
+    --gradient-mix: rgb(21 35 51);
+
     --nav-border: #dadada;
     --nav-bullet: #a0a0a0;
     --nav-resume-text: white;
@@ -111,7 +116,7 @@ header {
     flex-wrap: wrap;
     
     /* responsive */
-    margin-top: 70px;
+    margin-block-start: 70px;
     width: 100%;
     justify-content: center;
     align-content: center;
@@ -127,7 +132,7 @@ header {
     align-self: flex-start;
     height: 0.9096em;
     font-size: 0.366667em;
-    margin-left: 0.090909em;
+    margin-inline-start: 0.090909em;
 }
 .hero-inner div:nth-of-type(2) {
     align-self: flex-start;
@@ -172,7 +177,7 @@ main {
     }
     .hero {
         width: calc(100vw - (100vw - 100%));
-        margin-top: 0;
+        margin-block-start: 0;
         height: 90vh;
     }
     .hero-inner {
@@ -235,23 +240,23 @@ section * {
     margin: 0;
 }
 section h1 {
-    margin-top: 90px;
+    margin-block-start: 90px;
 }
-section p {
+section > p {
     font-size: 1.2em;
     color: #cecece;
     margin: 0;
-    margin-bottom: 1.5em;
+    margin-block-end: 1.5em;
 }
-section p:first-of-type {
-    margin-top: 1.5em;
+section > p:first-of-type {
+    margin-block-start: 1.5em;
 }
 
 #Contact {
     justify-content: center;
 }
 #Contact h1 {
-    margin-top: 0;
+    margin-block-start: 0;
 }
 
 
@@ -272,7 +277,7 @@ section p:first-of-type {
 }
 .image.me::before {
     content: '';
-    outline: var(--neon) 1px solid;
+    outline: var(--neon) 2px solid;
     transform: rotate(2deg);
     width: 100%;
     height: 100%;
@@ -281,7 +286,7 @@ section p:first-of-type {
 }
 .image.me::after {
     content: '';
-    outline: var(--hotpink) 1px solid;
+    outline: var(--hotpink) 2px solid;
     transform: rotate(2deg);
     width: 100%;
     height: 100%;
@@ -339,8 +344,8 @@ p {
 
 
 
-.card.featured {
-    outline: var(--neon) 1px solid;
+.featured {
+    outline: var(--neon) 2px solid;
     padding: min(5vw, 37px);
     /* border-radius: 9px; */
     background-color: transparent;
@@ -349,7 +354,72 @@ p {
     display: flex;
     flex-direction: column;
 }
-.card.featured::before {
+.featured::before {
+    content: '';
+    outline: var(--hotpink) 2px solid;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* border-radius: 9px; */
+    z-index: -1;
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
+}
+.featured:hover::before {
+    /* transform: rotate(2deg) scale(1.01) skew(-1deg, -1deg); */
+    transform: rotate(1deg) scale(1.01) skew(2deg, -2deg);
+    outline: var(--hotpink) 2px solid;
+}
+.featured .shiristory-logo a {
+    color: white;
+    text-decoration: none;
+}
+.featured:hover .shiristory-logo a {
+    /* text-shadow: 0 0 0.06em var(--hotpink); */
+    transition: text-shadow .3s ease-in-out;
+}
+.featured .shiristory-logo a:hover {
+    text-shadow: 0 0 0.06em #a4003d, 0 0 0.25em #32008b;;
+    transition: text-shadow .6s ease-in-out;
+}
+.shiristory-logo {
+    font-family: 'Salbabida Sans', sans-serif;
+    color: white;
+    font-size: min(5rem, 16vw);
+    font-weight: 400;
+    align-self: center;
+}
+
+
+.cards {
+    display: grid;
+    outline: var(--neon) 2px solid;
+    
+    grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+}
+.card {
+    outline: var(--neon) 1px solid;
+    padding: min(2.5vw, 37px);
+    background-color: transparent;
+    position: relative;
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+    /* overflow: hidden; */
+}
+.card h3 a {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem;
+}
+.card p {
+    font-size: 1.05rem;
+}
+.card::before {
     content: '';
     outline: var(--hotpink) 1px solid;
     width: 100%;
@@ -362,30 +432,15 @@ p {
     z-index: -1;
     transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
 }
-.card.featured:hover::before {
-    transform: rotate(2deg) scale(1.01) skew(-1deg, -1deg);
+.card:hover {
+    z-index: 5;
+}
+.card:hover::before {
+    /* transform: rotate(2deg) scale(1.01) skew(-1deg, -1deg); */
+    transform: rotate(1deg) scale(1.01) skew(2deg, -2deg);
     outline: var(--hotpink) 2px solid;
+    z-index: -1;
 }
-.card.featured .shiristory-logo a {
-    color: white;
-    text-decoration: none;
-}
-.card.featured:hover .shiristory-logo a {
-    /* text-shadow: 0 0 0.06em var(--hotpink); */
-    transition: text-shadow .3s ease-in-out;
-}
-.card.featured .shiristory-logo a:hover {
-    text-shadow: 0 0 0.06em #a4003d, 0 0 0.25em #32008b;;
-    transition: text-shadow .6s ease-in-out;
-}
-.shiristory-logo {
-    font-family: 'Salbabida Sans', sans-serif;
-    color: white;
-    font-size: min(5rem, 16vw);
-    font-weight: 400;
-    align-self: center;
-}
-
 
 
 .button {
@@ -459,6 +514,11 @@ p {
 
 ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-block: 1rem;
+    gap: 1rem;
 }
 li a {
     text-decoration: none;
@@ -486,4 +546,20 @@ li a span:hover::before, li a span:hover::after {
 }
 li a span:hover::before {
     width: 100%;
+}
+
+
+
+.tech-list {
+    color: #91b6ff;
+    color: #919191;
+}
+.featured .tech-list {
+    justify-content: center;
+}
+.card .tech-list {
+    font-size: 0.9rem;
+}
+.tech-list li {
+    font-family: 'Fira Mono', monospace;
 }
