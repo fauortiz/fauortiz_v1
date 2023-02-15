@@ -268,7 +268,7 @@ section > p:first-of-type {
     /* z-index: 1; */
 
     background-color: #001a24;
-    transition: background-color 0.15s linear;
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
     margin: 15px;
 }
 .image.me {
@@ -276,6 +276,10 @@ section > p:first-of-type {
     /* TODO kinda hacky */
     height: min(75vw, 375px);
     align-self: center;
+}
+.image.me span {
+    position: absolute;
+    z-index: 1;
 }
 .image.me::before {
     content: '';
@@ -285,6 +289,9 @@ section > p:first-of-type {
     height: 100%;
     display: block;
     position: absolute;
+    z-index: 1;
+    background-color: var(--gradient-mix);
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
 }
 .image.me::after {
     content: '';
@@ -294,11 +301,14 @@ section > p:first-of-type {
     height: 100%;
     display: block;
     position: absolute;
-    z-index: -1;
-    transition: all 0.15s linear;
+    z-index: 0;
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
+}
+.image.me:hover::before {
+    transform: scale(1.02) rotate(2deg);
 }
 .image.me:hover::after {
-    transform: rotate(-3deg) translate(-3px, 0px);
+    transform: scale(1.02) rotate(-3deg) translate(-3px, 0px);
     outline: var(--hotpink) 3px solid;
 }
 .image.shiristory {
@@ -308,10 +318,10 @@ section > p:first-of-type {
     align-self: center;
 }
 .image span {
-    mix-blend-mode: screen;
+    /* mix-blend-mode: screen; */
 
-    filter: grayscale(1);
-    transition: all 0.15s linear;
+    /* filter: grayscale(1); */
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
 }
 .image:hover {
     background-color: black;
@@ -336,8 +346,8 @@ h2 {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 1.35em;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
+    margin-block-start: 2em;
+    margin-block-end: 2em;
 }
 p {
     margin-block-start: 1em;
@@ -345,18 +355,22 @@ p {
 }
 
 
-
+.featured-container {
+    position: relative;
+    z-index: 1;
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
+}
 .featured {
     outline: var(--neon) 2px solid;
     padding: min(5vw, 37px);
-    /* border-radius: 9px; */
-    background-color: transparent;
-    position: relative;
+    background-color: var(--gradient-mix);
     transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
     display: flex;
+    float: left;
     flex-direction: column;
+    z-index: 1;
 }
-.featured::before {
+.featured-container::after {
     content: '';
     outline: var(--hotpink) 2px solid;
     width: 100%;
@@ -365,18 +379,20 @@ p {
     position: absolute;
     top: 0;
     left: 0;
-    /* border-radius: 9px; */
-    z-index: 0;
+    z-index: -1;
     transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
 }
-.featured:hover {
-    background-color: #172C38;
+.featured-container:hover {
+    transform: scale(1.01);
 }
-.featured:hover::before {
-    /* transform: rotate(2deg) scale(1.01) skew(-1deg, -1deg); */
-    transform: rotate(1deg) scale(1.01) skew(2deg, -2deg);
+.featured-container:hover::after {
+    transform: rotate(0deg) scale(1.02) skew(1deg, -1deg);
+    transform: rotate(1deg) scale(1.03) skew(-1deg, -2deg);
     outline: var(--hotpink) 3px solid;
 }
+
+
+
 .featured .shiristory-logo a {
     color: white;
     text-decoration: none;
@@ -398,21 +414,34 @@ p {
 }
 
 
+
 .cards {
     display: grid;
     outline: var(--neon) 2px solid;
     
     grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
 }
+.card-container {
+    position: relative;
+    z-index: 1;
+}
+.card-container:hover {
+    z-index: 2;
+    transform: scale(1.01);
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
+}
 .card {
     outline: var(--neon) 1px solid;
     padding: min(2.5vw, 37px);
-    background-color: transparent;
-    position: relative;
+    background-color: var(--gradient-mix);
     transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
     display: flex;
+    float: left;
     flex-direction: column;
-    /* overflow: hidden; */
+    z-index: 1;
+}
+.card:hover {
+    outline: var(--neon) 2px solid;
 }
 .card h3 a {
     font-family: 'Mulish', sans-serif;
@@ -424,9 +453,10 @@ p {
 .card p {
     font-size: 1.05rem;
 }
-.card::before {
+.card-container::after {
     content: '';
     outline: var(--hotpink) 1px solid;
+    background-color: var(--gradient-mix);
     width: 100%;
     height: 100%;
     display: block;
@@ -437,12 +467,10 @@ p {
     z-index: -1;
     transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
 }
-.card:hover {
-    z-index: 5;
-}
-.card:hover::before {
-    /* transform: rotate(2deg) scale(1.01) skew(-1deg, -1deg); */
-    transform: rotate(1deg) scale(1.01) skew(2deg, -2deg);
+.card-container:hover::after {
+    transform: rotate(1deg) scale(1.02) skew(2deg, -2deg);
+    transform: rotate(0deg) scale(1.02) skew(1deg, -2deg);
+    transform: rotate(1deg) scale(1.03) skew(-1deg, -2deg);
     outline: var(--hotpink) 3px solid;
     z-index: -1;
 }
@@ -524,6 +552,7 @@ ul {
     display: flex;
     margin-block: 1rem;
     gap: 1rem;
+    z-index: 3;
 }
 li a {
     text-decoration: none;
@@ -536,7 +565,7 @@ li a {
 li a span::before, li a span::after {
     content: "";
     width: 0;
-    height: 1px;
+    height: 2px;
     background-color: var(--neon);
     position: absolute;
     top: 1.17em;
@@ -547,7 +576,7 @@ li a span::before, li a span::after {
 li a span::before {left: 0;}
 li a span::after {left: 0; background-color: var(--hotpink);}
 li a span:hover::before, li a span:hover::after {
-    width: 80%;
+    width: 50%;
 }
 li a span:hover::before {
     width: 100%;
