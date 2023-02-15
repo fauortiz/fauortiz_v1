@@ -130,6 +130,12 @@ export default function Home() {
             <Head>
                 <title>Francis Ortiz</title>
                 <link rel="icon" href="/favicon.ico" />
+
+                <meta property="og:URL" content="/preview.png" />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Francis Ortiz" />
+                <meta property="og:description" content="Francis Ortiz, Full-stack Web Developer" />
+                <meta property="og:image" content="/preview.png" />
             </Head>
 
             {/* <Background /> */}
@@ -140,13 +146,13 @@ export default function Home() {
                 <div className='hero-inner'>
                     <div>Hello! I'm</div>
                     <div>Francis Ortiz</div>
-                    <div>Full Stack</div> 
+                    <div>Full-stack</div> 
                     <div>Web Developer</div>
                     <div>(also an Industrial Engineer)</div>
                 </div>
             </div>
 
-            <main>  
+            <main>
 <section id="About">
     <h1>Welcome!</h1>
     <h2>About Me</h2>

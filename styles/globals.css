@@ -43,7 +43,7 @@ html, body {
     
     --gradient1: rgb(16 44 58);
     --gradient2: rgb(23 32 59);
-    --gradient-mix: rgb(21 35 51);
+    --gradient-mix: rgb(16 44 58);
 
     --nav-border: #dadada;
     --nav-bullet: #a0a0a0;
@@ -62,14 +62,14 @@ html, body {
 
 
 body {
-    background: linear-gradient(0deg, 
+    /* background: linear-gradient(0deg, 
         var(--gradient1) 0%, 
         var(--gradient2) 25%, 
         var(--gradient1) 50%, 
         var(--gradient2) 75%, 
         var(--gradient1) 100%);
     background-size: 100% 4000%;
-    animation: gradient 30s linear infinite;
+    animation: gradient 30s linear infinite; */
     background-attachment: fixed;
     background-color: var(--gradient-mix);
 }
@@ -163,8 +163,9 @@ main {
     font-family: 'Mulish', sans-serif;
     font-size: 16px;
 
-    background-color: #262b33;
-    background-color: #262b3359;
+    /* background-color: #262b33;
+    background-color: #262b3359; */
+    background-color: #172C38;
     /* backdrop-filter: blur(2px); */
 }
 
@@ -365,8 +366,11 @@ p {
     top: 0;
     left: 0;
     /* border-radius: 9px; */
-    z-index: -1;
+    z-index: 0;
     transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
+}
+.featured:hover {
+    background-color: #172C38;
 }
 .featured:hover::before {
     /* transform: rotate(2deg) scale(1.01) skew(-1deg, -1deg); */
