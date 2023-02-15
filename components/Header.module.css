@@ -206,6 +206,7 @@ write 'MENU' in small horizontal small caps
     /* user-select: none; */
 
     box-shadow: 0 1px 0 var(--nav-border) inset;
+    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
 }
 .button:last-of-type {
     box-shadow: 0 1px 0 var(--nav-border) inset, 0 -1px 0 var(--nav-border) inset;
@@ -245,6 +246,8 @@ write 'MENU' in small horizontal small caps
     background-color: var(--pink-clear); */
     border: 1px solid var(--nav-resume-border);
     background-color: var(--bright);
+    border: 2px solid var(--nav-border);
+    background-color: #ededed;
     color: var(--text);
     
     margin-inline-end: 40px;
@@ -262,7 +265,8 @@ write 'MENU' in small horizontal small caps
 }
 .resume a:hover {
     background-color: var(--nav-resume-bg);
-    color: var(--nav-resume-text);
+    /* color: var(--nav-resume-text); */
+    background-color: var(--bright);
     font-weight: 700;
 }
 .resume a span {
