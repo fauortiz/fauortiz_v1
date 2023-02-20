@@ -43,7 +43,9 @@ html, body {
     
     --gradient1: rgb(16 44 58);
     --gradient2: rgb(23 32 59);
+    --gradient2: rgb(47 70 110);
     --gradient-mix: rgb(16 44 58);
+    --hero-bg: rgb(27 57 72);
 
     --nav-border: #dadada;
     --nav-bullet: #a0a0a0;
@@ -54,6 +56,7 @@ html, body {
     --bright: #9affe0;
     --bright: #8affe8;
     --bright: #b5fff0;
+    --bright: #8fffe5;
     --light-neon: #a2ffea;
     --neon: #4cffd6;
     --hotpink: #ff116a;
@@ -63,7 +66,7 @@ html, body {
 
 
 body {
-    background: linear-gradient(0deg, 
+    /* background: linear-gradient(0deg, 
         var(--gradient1) 0%, 
         var(--gradient2) 25%, 
         var(--gradient1) 50%, 
@@ -71,8 +74,9 @@ body {
         var(--gradient1) 100%);
     background-size: 100% 2000%;
     animation: gradient 9s linear infinite;
-    background-attachment: fixed;
+    background-attachment: fixed; */
     background-color: var(--gradient-mix);
+    background-color: var(--hero-bg);
 }
 @keyframes gradient {
     0% {
@@ -270,12 +274,12 @@ section > p:first-of-type {
 
     background-color: #001a24;
     transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
-    margin: 15px;
+    margin: 20px;
 }
 .image.me {
-    width: min(60vw, 300px);
+    width: min(60vw, 240px);
     /* TODO kinda hacky */
-    height: min(75vw, 375px);
+    height: min(75vw, 300px);
     align-self: center;
 }
 .image.me span {
@@ -310,6 +314,8 @@ section > p:first-of-type {
 }
 .image.me:hover::after {
     transform: scale(1.02) rotate(-3deg) translate(-3px, 0px);
+    transform: scale(1.02) rotate(6deg);
+    
     outline: var(--hotpink) 3px solid;
 }
 .image.shiristory {
