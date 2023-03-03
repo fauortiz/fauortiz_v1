@@ -19,9 +19,11 @@ export default function Project({name, description, tech, liveURL, githubURL, mi
                             <a href={liveURL} rel="noopener" target="_blank"><span>Live Demo</span></a>
                         </li>
                     }
-                    <li>
-                        <a href={githubURL} rel="noopener" target="_blank"><span>Github</span></a>
-                    </li>
+                    { githubURL && 
+                        <li>
+                            <a href={githubURL} rel="noopener" target="_blank"><span>Github</span></a>
+                        </li>
+                    }
                 </ul>
             </div>
         </div>

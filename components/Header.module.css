@@ -374,7 +374,7 @@ write 'MENU' in small horizontal small caps
     position: absolute;
     width: 100%;
     height: 3px;
-    background: var(--text);
+    background-color: var(--text);
     transition: all var(--burger-speed) var(--burger-curve);
     top: 10%;
     right: 0;
@@ -385,7 +385,7 @@ write 'MENU' in small horizontal small caps
     position: absolute;
     width: 100%;
     height: 3px;
-    background: var(--text);
+    background-color: var(--text);
     transition: all var(--burger-speed) var(--burger-curve);
     bottom: 10%;
     left: 0;
@@ -403,7 +403,7 @@ write 'MENU' in small horizontal small caps
     position: absolute;
     width: 100%;
     height: 3px;
-    background: var(--text);
+    background-color: var(--text);
     transition: all var(--burger-speed) var(--burger-curve);
     box-shadow: 0 0 0 3px var(--lightgray);
 }
@@ -418,7 +418,7 @@ write 'MENU' in small horizontal small caps
 }
 
 .burgerWrapper input:hover ~ .bun:before, .burgerWrapper input:hover ~ .bun:after, .burgerWrapper input:hover ~ .bun :before, .burgerWrapper input:hover ~ .bun :after {
-    background: #343434;
+    background-color: #343434;
 }
 
 .burgerWrapper.animate .bun:before, .burgerWrapper.animate .bun:after {
