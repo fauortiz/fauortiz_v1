@@ -179,7 +179,7 @@ main {
 
     /* background-color: #262b33;
     background-color: #262b3359; */
-    background-color: #172C38;
+    /* background-color: #172C38; */
     /* backdrop-filter: blur(2px); */
 }
 
@@ -237,7 +237,7 @@ main {
 
 
 main {
-    outline: #003d47 1px solid;
+    /* outline: #003d47 1px solid; */
 }
 main > * {
     /* outline: red 1px solid; */

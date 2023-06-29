@@ -41,7 +41,7 @@ export default function Home() {
             description: 'Designed an API, database, and frontend for a social network app. Submitted to CS50 Web.',
             tech: ['Django', 'SQL', 'Javascript'],
             liveURL: '',
-            githubURL: 'https://github.com/me50/fauortiz/tree/web50/projects/2020/x/network',
+            githubURL: 'https://github.com/fauortiz/cs50w_network',
             misc: {}
         },
         {
@@ -50,7 +50,7 @@ export default function Home() {
             description: 'Designed a CRUD app for an auction e-commerce site. Submitted to CS50 Web.',
             tech: ['Django', 'SQL'],
             liveURL: '',
-            githubURL: 'https://github.com/me50/fauortiz/tree/web50/projects/2020/x/commerce',
+            githubURL: 'https://github.com/fauortiz/cs50w_commerce',
             misc: {}
         },
         {
@@ -68,7 +68,7 @@ export default function Home() {
             description: 'Designed an email SPA utilizing API calls. Submitted to CS50 Web.',
             tech: ['Django', 'SQL', 'Javascript'],
             liveURL: '',
-            githubURL: 'https://github.com/me50/fauortiz/tree/web50/projects/2020/x/mail',
+            githubURL: 'https://github.com/fauortiz/cs50w_mail',
             misc: {}
         },
         {
