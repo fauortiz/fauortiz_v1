@@ -313,6 +313,7 @@ p {
     }
     .about-subsection .p-wrapper p {
         margin-right: 1em;
+        margin-top: max(40px,15%);
     }
     .about-subsection .image-wrapper {
         width: 100%;

@@ -146,13 +146,13 @@ export default function Home() {
                 <section id="About">
                     <h1>About Me</h1>
                     <p>
-                        I worked as the head of forecasting and logistics at a famous restaurant chain when my regrets finally caught up to me, and I decided to leave my career behind to teach myself how to code.
+                        I was working as the head of forecasting and logistics at a famous restaurant chain when my regrets finally caught up to me, and I decided to leave my career behind and teach myself how to code.
                         <br/><br/>
                         I graduated <span>BS Industrial Engineering</span> at <span>UP Diliman</span>, but I was always raised by the Internet. I dreamt of weaving ideas into reality through programming.
                         <br/><br/>
                         Since then, I've completed various courses, such as Harvard's <a href="/CS50x.pdf" rel="noopener" target="_blank">CS50</a> and <a href="/CS50W.pdf" rel="noopener" target="_blank">CS50 Web</a>, where I learned the fundamentals, as well as how to use various web frameworks for JS, Python, and SQL through several <a href="#Projects" class="smooth">learning projects</a> below. I also have my featured project, Shiristory, complete with a live <a href="https://shiristory.herokuapp.com/" rel="noopener" target="_blank">game demo</a>! Let me know what you think!
                         <br/><br/>
-                        I am currently seeking <a href="#Contact" class="smooth">employment</a> as a <span>backend web developer</span> hoping to improve through experience, while also offering my systems engineering expertise, as well as my years of experience in problem solving, team management, and various soft skills.
+                        I am currently seeking <a href="#Contact" class="smooth">employment</a> as a <span>backend developer</span> hoping to learn humbly through experience, while also offering my years of experience in problem solving, team management, and various soft skills, as well as the mindset of efficiency from my industrial engineering background.
                     </p>
                     <div className="about-separator"><div></div></div>
                     <div className="about-subsection">
@@ -160,7 +160,7 @@ export default function Home() {
                             <p>
                                 Here are some of <a href="/CS50x.pdf" rel="noopener" target="_blank">my</a> <a href="/CS50W.pdf" rel="noopener" target="_blank">course</a> <a href="/Coursera.pdf" rel="noopener" target="_blank">certificates</a>, but really, <a href="https://scrimba.com/learn/learnreact" rel="noopener" target="_blank">most</a> of the courses didn't have them (for free).
                                 <br/><br/>
-                                Thank you for reading this far! During my free time, I bike, play games, and learn whatever interests me. Also that's me right there, hello world!
+                                Thank you for reading this far! During my free time, I bike, play games, and learn whatever interests me. Also that's me, hello, internet
                             </p>
                         </div>
                         <div className="image-wrapper">
@@ -184,10 +184,10 @@ export default function Home() {
                 <section id="Contact">
                     <h1>Contact</h1>
                     <p>
-                        I'm currently seeking a full-time backend web developer position.
+                        I am currently seeking a full-time backend developer position. My goal is to refine my programming skills through mentorship and collaboration. I also possess a variety of useful skills gained during my previous work as an Industrial Engineer.
                         <br></br><br></br>
-                        My goal is to refine my skills through mentorship and collaboration.
-                        If you are interested, check out my links below.
+                        
+                        If you wish to reach out, check out the links below.
                     </p>    
                     <div className="button">
                         <a href="mailto:fauortiz@gmail.com" rel="noopener" target="_blank"><span>Email Me</span></a>
