@@ -160,7 +160,7 @@ export default function Home() {
                             <p>
                                 Here are some of <a href="/CS50x.pdf" rel="noopener" target="_blank">my</a> <a href="/CS50W.pdf" rel="noopener" target="_blank">course</a> <a href="/Coursera.pdf" rel="noopener" target="_blank">certificates</a>, but really, <a href="https://scrimba.com/learn/learnreact" rel="noopener" target="_blank">most</a> of the courses didn't have them (for free).
                                 <br/><br/>
-                                Thank you for reading this far! During my free time, I bike, play games, and learn whatever interests me. Also that's me, hello, internet
+                                Thank you for reading this far! During my free time, I bike, play games, and learn whatever interests me. Also, that's me. Hello!
                             </p>
                         </div>
                         <div className="image-wrapper">
