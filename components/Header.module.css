@@ -1,14 +1,3 @@
-/* 
-TODO
-SVG toggler icon
-highlight <nav> link based on current <main> scroll
-
-possible TODO
-show on hover, hide on unhover
-animated logo
-write 'MENU' in small horizontal small caps
-	or sideways vertical small caps
- */
 
 .toggler {
     
@@ -28,7 +17,11 @@ write 'MENU' in small horizontal small caps
     
     z-index: 902;
     
-    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
+    transition: var(--transition);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 .toggler.hide {
     top: -70px;
@@ -39,18 +32,17 @@ write 'MENU' in small horizontal small caps
 .toggler .transparent {
     background-color: transparent;
     height: 70px;
-    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
+    transition: var(--transition);
 
     display: none;
 }
 .toggler .opaque {
-    background-color: var(--lightgray);
+    background-color: var(--nav-background-bar);
     height: 70px;
-    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
+    transition: var(--transition);
 }
 .toggler.navShow {
     height: 70px;
-    /* width: 70px; */
 }
 .toggler.navShow .transparent {
     height: 0px;
@@ -68,7 +60,7 @@ write 'MENU' in small horizontal small caps
     top: calc(50% - 35px);
 
     font-size: 30px;
-    color: var(--text);
+    color: var(--nav-text);
 
     display: flex;
     align-items: center;
@@ -83,8 +75,8 @@ write 'MENU' in small horizontal small caps
     
     display: flex;
     justify-content: flex-start;
-    background-color: var(--lightgray);
-    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
+    background-color: var(--nav-background-bar);
+    transition: var(--transition);
 }
 .closer {
     /* counteracting <button> defaults */
@@ -100,7 +92,7 @@ write 'MENU' in small horizontal small caps
     
     display: flex;
     justify-content: flex-end;
-    background-color: var(--lightgray);
+    background-color: var(--nav-background-bar);
 }
 .closer div, .logo div {
     height: 70px;
@@ -112,12 +104,10 @@ write 'MENU' in small horizontal small caps
     
     font-family: 'Yatra One', sans-serif;
     font-size: 37px;
-    color: var(--text);
+    color: var(--nav-text);
     margin-block-start: 2px;
 
-    /* TODO hardcoded color */
-    text-shadow: 1px 1px #51d6ff, 1px 2px black;
-    /* text-shadow: 1px 1px #51d6ff, -1px -1px #51d6ff, -1px 1px #51d6ff, 1px -1px #51d6ff, 1px 2px black; */
+    text-shadow: var(--logo-text-shadow);
 }
 
 
@@ -125,14 +115,8 @@ write 'MENU' in small horizontal small caps
 .nav {
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 1px;
-    /* text-transform: uppercase; */
 
-    background-color: var(--gray);
-    /* background: rgb(0,0,0);
-    background: -moz-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(230,230,230,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(230,230,230,1) 100%);
-    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(230,230,230,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#e6e6e6",GradientType=1); */
+    background-color: var(--nav-background);
     width: 100%;
     height: 100vh;
     position: absolute;
@@ -142,7 +126,11 @@ write 'MENU' in small horizontal small caps
     left: 0px;
     opacity: 1;
 
-    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
+    transition: var(--transition);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 .nav.hide {
     left: -100vw;
@@ -160,8 +148,6 @@ write 'MENU' in small horizontal small caps
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
-    border-right: var(--nav-border) 1px solid;
 }
 
 
@@ -171,7 +157,7 @@ write 'MENU' in small horizontal small caps
     position: relative;
     width: 0px;
     height: 30px;
-    transition: all 0.15s cubic-bezier(0.5, 0, 0, 1);
+    transition: var(--transition);
 }
 .bullet > div {
     position: absolute;
@@ -188,37 +174,29 @@ write 'MENU' in small horizontal small caps
     left: -10px;
     position: relative;
 }
-/* .button.active .bullet {
-    margin-inline-start: 26px;
-} */
-.button:hover .bullet {
-    margin-inline-start: 26px;
-}
 .button {
     width: 100%;
     height: 70px;
     
     text-decoration: none;
-    color: var(--text);
+    color: var(--nav-text);
     font-size: 50px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
     
-    /* user-select: none; */
-
     box-shadow: 0 1px 0 var(--nav-border) inset;
-    transition: all 0.25s cubic-bezier(0.5, 0, 0, 1);
+    transition: var(--nav-transition);
 }
 .button:last-of-type {
     box-shadow: 0 1px 0 var(--nav-border) inset, 0 -1px 0 var(--nav-border) inset;
 }
 .button.active {
-    background-color: var(--bright);
+    background-color: var(--nav-active);
 }
-.button:hover {
-    background-color: var(--black);
+.button.active .bullet {
+    margin-inline-start: 31px;
 }
 .link {
     padding-right: 40px;
@@ -244,16 +222,8 @@ write 'MENU' in small horizontal small caps
     text-transform: uppercase;
     text-decoration: none;
 
-    /* color: var(--pink);
-    border: 1px solid var(--pink);
-    background-color: var(--pink-clear); */
-    border: 1px solid var(--nav-resume-border);
-    background-color: var(--bright);
     border: 2px solid var(--nav-border);
-    /* background-color: #ededed; */
-    color: var(--text);
-    
-    background-color: var(--nav-resume-bg);
+    background-color: var(--nav-resume-background);
     color: var(--nav-resume-text);
 
     margin-inline-end: 40px;
@@ -264,22 +234,19 @@ write 'MENU' in small horizontal small caps
     justify-content: center;
     align-items: center;
     
-    /* padding: 18px; */
     border-radius: 9px;
-    /* padding-top: 21px; */
-    transition: all 0.25s cubic-bezier(0.5, 0, 0, 1);
+    transition: var(--nav-transition);
 }
 .resume a:hover {
-    /* background-color: var(--nav-resume-bg); */
-    color: var(--nav-resume-text);
-    background-color: var(--bright);
-    color: black;
-    background-color: white;
+    color: var(--nav-resume-text-hover);
+    background-color: var(--nav-resume-background-hover);
     font-weight: 700;
 }
 .resume a span {
     padding-top: 6px;
 }
+
+
 
 /* desktop/lengthwise tablet */
 @media (min-width: 640px) {
@@ -312,17 +279,6 @@ write 'MENU' in small horizontal small caps
         /* disable mobile nav fade-in */
         opacity: 1;
     }
-
-    /* .button {
-        justify-content: flex-end;
-        box-shadow: none;
-    }
-    .button:last-of-type {
-        box-shadow: none;
-    }
-    .bullet {
-        display: none;
-    } */
 }
 
 /* adjusts navContainer overflow on lower heights */
@@ -356,9 +312,6 @@ write 'MENU' in small horizontal small caps
 
 
 
-
-
-
 .burgerWrapper {
     --burger-size: 30px;
     --burger-speed: 0.3s;
@@ -374,22 +327,22 @@ write 'MENU' in small horizontal small caps
     position: absolute;
     width: 100%;
     height: 3px;
-    background-color: var(--text);
+    background-color: var(--nav-text);
     transition: all var(--burger-speed) var(--burger-curve);
     top: 10%;
     right: 0;
-    box-shadow: 0 0 0 3px var(--lightgray);
+    box-shadow: 0 0 0 3px var(--nav-background-bar);
 }
 .burgerWrapper .bun:after {
     content: "";
     position: absolute;
     width: 100%;
     height: 3px;
-    background-color: var(--text);
+    background-color: var(--nav-text);
     transition: all var(--burger-speed) var(--burger-curve);
     bottom: 10%;
     left: 0;
-    box-shadow: 0 0 0 3px var(--lightgray);
+    box-shadow: 0 0 0 3px var(--nav-background-bar);
 }
 .burgerWrapper .bun .patty {
     position: absolute;
@@ -403,9 +356,9 @@ write 'MENU' in small horizontal small caps
     position: absolute;
     width: 100%;
     height: 3px;
-    background-color: var(--text);
+    background-color: var(--nav-text);
     transition: all var(--burger-speed) var(--burger-curve);
-    box-shadow: 0 0 0 3px var(--lightgray);
+    box-shadow: 0 0 0 3px var(--nav-background-bar);
 }
 .burgerWrapper input {
     display: block;
@@ -416,11 +369,9 @@ write 'MENU' in small horizontal small caps
     height: var(--burger-size);
     cursor: pointer;
 }
-
 .burgerWrapper input:hover ~ .bun:before, .burgerWrapper input:hover ~ .bun:after, .burgerWrapper input:hover ~ .bun :before, .burgerWrapper input:hover ~ .bun :after {
     background-color: #343434;
 }
-
 .burgerWrapper.animate .bun:before, .burgerWrapper.animate .bun:after {
     width: 0;
 }
@@ -429,5 +380,5 @@ write 'MENU' in small horizontal small caps
 }
 .burgerWrapper.animate .patty:after {
     transform: rotate(45deg);
-    box-shadow: 0 0 0 0 var(--lightgray);
+    box-shadow: 0 0 0 0 var(--nav-background-bar);
 }

@@ -8,18 +8,13 @@ export default function Header({ windowWidth }) {
     const [showToggler, setShowToggler] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     
-    // show/hide navbar on scroll up/down
+    // show/hide navbar upon scrolling up/down
     useEffect(() => {
         function toggleShowNavbar() {
             // determine if user scrolled up
-            // console.log(`${window.scrollY} < ${lastScrollY}`)
             if (window.scrollY === 0 || (window.scrollY < lastScrollY)) {
-                // if (isDesktop) {
-                //     setShowNav(true)
-                // }
                 setShowToggler(true)
             } else {
-                // setShowNav(false)
                 setShowToggler(false)
             }
             // remember last scroll position
@@ -32,17 +27,14 @@ export default function Header({ windowWidth }) {
 
 
 
-    // highlight active section on navbar on scroll
+    // on scroll, highlight the respective navbar button based on the current section
     useEffect(() => {
         const scrollY = Math.ceil(window.scrollY)
         const sections = document.querySelectorAll('section[id]')
-        // console.log(scrollY)
         sections.forEach(section => {
             const sectionId = section.getAttribute('id')
             const sectionHeight = section.offsetHeight
             const sectionTop = section.offsetTop - 150
-
-            // console.log(`id:${sectionId}, height:${sectionHeight+sectionTop}, active? ${scrollY >= sectionTop && scrollY < sectionTop + sectionHeight}`)
 
             // if scrollY is within a certain section's height...
             if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
@@ -55,10 +47,9 @@ export default function Header({ windowWidth }) {
 
 
 
-    // smooth scrolling anchor navigation
+    // enables smooth scrolling anchor navigation
     useEffect(() => {
         document.querySelectorAll(`.${styles.button}`).forEach(anchor => {
-            // console.log(anchor.getAttribute('href'))
             anchor.addEventListener('click', event => {
                 event.preventDefault();
         
@@ -81,7 +72,7 @@ export default function Header({ windowWidth }) {
         }
     }
 
-    console.log('Navbar')
+    // console.log('render Navbar')
     return (
         <header>
             <button className={`${styles.toggler} ${showToggler ? '' : styles.hide} ${showNav ? styles.navShow : ''}`} onClick={toggleNav}>

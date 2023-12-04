@@ -16,11 +16,11 @@ export default function ProjectFeatured({name, description, tech, liveURL, githu
                 <ul className="url-list">
                     { liveURL && 
                         <li>
-                            <a href={liveURL} rel="noopener" target="_blank"><span>Live Demo</span></a>
+                            <a href={liveURL} rel="noopener" target="_blank">Live Demo</a>
                         </li>
                     }
                     <li>
-                        <a href={githubURL} rel="noopener" target="_blank"><span>Github</span></a>
+                        <a href={githubURL} rel="noopener" target="_blank">Github</a>
                     </li>
                 </ul>
             </div>

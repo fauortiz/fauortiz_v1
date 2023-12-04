@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
-// import Background from '@components/Background'
 import Header from '@components/Header'
 import Image from 'next/image'
 import { nanoid } from 'nanoid'
@@ -9,13 +8,13 @@ import Project from '@components/Project'
 
 export default function Home() {
     
-    const { windowHeight, windowWidth } = useWindowSize()
+    const windowWidth = useWindowSize()
 
     const projectsFeatured = [
         {
             id: nanoid(),
             name: 'SHIRISTORY',
-            description: 'A browser game where you chain english words together to score points, built with Django, SQL, and React. Features user profiles, player progression, customizable abilities, and leaderboards.  Live demo available on Heroku.',
+            description: 'A browser game where you chain words together to score points, made entirely using Django, SQL, and React. Features user profiles, player progression, customizable abilities, and leaderboards.  Live demo available on Heroku.',
             tech: ['Django', 'SQL', 'React', 'Heroku'],
             liveURL: "https://shiristory.herokuapp.com/",
             githubURL: 'https://github.com/fauortiz/shiristory_v2',
@@ -106,7 +105,20 @@ export default function Home() {
         />
     ))
 
-    console.log('Home')
+    // enables smooth scrolling anchor navigation
+    useEffect(() => {
+        document.querySelectorAll(`.smooth`).forEach(anchor => {
+            anchor.addEventListener('click', event => {
+                event.preventDefault();
+        
+                document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    }, [])
+
+    // console.log('render Home')
     return (
         <div className="home">
             <Head>
@@ -116,11 +128,9 @@ export default function Home() {
                 <meta property="og:URL" content="/preview.png" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Francis Ortiz" />
-                <meta property="og:description" content="Francis Ortiz, Full-stack Web Developer" />
+                <meta property="og:description" content="Francis Ortiz - Backend Developer" />
                 <meta property="og:image" content="/preview.png" />
             </Head>
-
-            {/* <Background /> */}
 
             <Header windowWidth={windowWidth} />
             
@@ -133,50 +143,59 @@ export default function Home() {
             </div>
 
             <main>
-<section id="About">
-    <h1>About Me</h1>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-    <div className="about-wrapper">
-        <ul>
-            <li>
-                <a href="/CS50x.pdf" rel="noopener" target="_blank"><span>CS50x</span></a>
-            </li>
-            <li>
-                <a href="/CS50W.pdf" rel="noopener" target="_blank"><span>CS50 Web</span></a>
-            </li>
-        </ul>
-        <div className="image me">
-            <Image src="/me.png" alt="photo" layout="fill" />
-        </div>
-    </div>
-</section>
-<section id="Projects">
-    <h1>Projects</h1>
-    <h2>Featured Project</h2>
-    {projectsFeaturedElements}
-    <h2>Other Projects</h2>
-    <div className="cards">
-        {projectsElements}
-    </div>
-</section>
-<section id="Contact">
-    <h1>Contact</h1>
-    <p>
-       I'm currently seeking full-time employment opportunities!
-<br></br><br></br>
-        My goal is to refine my skills through mentorship and collaboration.
-        If you're interested, feel free to contact me below.
-    </p>    
-    <div className="button">
-        <a href="mailto:fauortiz@gmail.com" rel="noopener" target="_blank"><span>Email Me</span></a>
-    </div>
-    <div className="button">
-        <a href="/resume_francis_ortiz.pdf" rel="noopener" target="_blank"><span>View my Resume</span></a>
-    </div>
+                <section id="About">
+                    <h1>About Me</h1>
+                    <p>
+                        I worked as the head of forecasting and logistics at a famous restaurant chain when my regrets finally caught up to me, and I decided to leave my career behind to teach myself how to code.
+                        <br/><br/>
+                        I graduated <span>BS Industrial Engineering</span> at <span>UP Diliman</span>, but I was always raised by the Internet. I dreamt of weaving ideas into reality through programming.
+                        <br/><br/>
+                        Since then, I've completed various courses, such as Harvard's <a href="/CS50x.pdf" rel="noopener" target="_blank">CS50</a> and <a href="/CS50W.pdf" rel="noopener" target="_blank">CS50 Web</a>, where I learned the fundamentals, as well as how to use various web frameworks for JS, Python, and SQL through several <a href="#Projects" class="smooth">learning projects</a> below. I also have my featured project, Shiristory, complete with a live <a href="https://shiristory.herokuapp.com/" rel="noopener" target="_blank">game demo</a>! Let me know what you think!
+                        <br/><br/>
+                        I am currently seeking <a href="#Contact" class="smooth">employment</a> as a <span>backend web developer</span> hoping to improve through experience, while also offering my systems engineering expertise, as well as my years of experience in problem solving, team management, and various soft skills.
+                    </p>
+                    <div className="about-separator"><div></div></div>
+                    <div className="about-subsection">
+                        <div className="p-wrapper">
+                            <p>
+                                Here are some of <a href="/CS50x.pdf" rel="noopener" target="_blank">my</a> <a href="/CS50W.pdf" rel="noopener" target="_blank">course</a> <a href="/Coursera.pdf" rel="noopener" target="_blank">certificates</a>, but really, <a href="https://scrimba.com/learn/learnreact" rel="noopener" target="_blank">most</a> of the courses didn't have them (for free).
+                                <br/><br/>
+                                Thank you for reading this far! During my free time, I bike, play games, and learn whatever interests me. Also that's me right there, hello world!
+                            </p>
+                        </div>
+                        <div className="image-wrapper">
+                            <div className="image me">
+                                <Image src="/me.png" alt="portrait" layout="fill" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-</section>
+                <section id="Projects">
+                    <h1>Projects</h1>
+                    <h2>Featured Project</h2>
+                    {projectsFeaturedElements}
+                    <h2>Other Projects</h2>
+                    <div className="cards">
+                        {projectsElements}
+                    </div>
+                </section>
+
+                <section id="Contact">
+                    <h1>Contact</h1>
+                    <p>
+                        I'm currently seeking a full-time backend web developer position.
+                        <br></br><br></br>
+                        My goal is to refine my skills through mentorship and collaboration.
+                        If you are interested, check out my links below.
+                    </p>    
+                    <div className="button">
+                        <a href="mailto:fauortiz@gmail.com" rel="noopener" target="_blank"><span>Email Me</span></a>
+                    </div>
+                    <div className="button">
+                        <a href="/resume_francis_ortiz.pdf" rel="noopener" target="_blank"><span>View my Resume</span></a>
+                    </div>
+                </section>
             </main>
         </div>
     )
@@ -184,6 +203,7 @@ export default function Home() {
 
 
 
+/** Returns state containing browser window dimensions */
 function useWindowSize() {
     const [windowSize, setWindowSize] = useState({
         windowHeight: undefined,
